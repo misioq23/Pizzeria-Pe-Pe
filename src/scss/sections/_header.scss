@@ -1,0 +1,162 @@
+@import '../mixins/burger';
+@import '../mixins/center';
+@import '../mixins/media_queries';
+
+$navbar__height: 3.75rem;
+$logo__height: 3.5rem;
+$nav__link: 1.25rem;
+
+$base--m: 0.9; //zmiana wielkosci loga dla średnich urządzeń
+$base--s: 0.7; //zmiana wielkosci loga dla małych urządzeń
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+
+	width: 100%;
+
+    color: $text__bright;
+    fill: $text__bright;
+    box-shadow: 0 0.02em 1em rgba(0, 0, 0, 0.8);
+    // transition: ease-out 0.3s;
+}
+
+.js-navbar--scroll {
+	background: $color__fourth;
+	color: $color__primary;
+    fill: $color__primary;
+
+}
+
+.navbar__wrapper {
+	display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 85em;
+   	height: $navbar__height;
+    margin: 0 auto;
+}
+
+.logo {
+	display: flex;
+	align-items: center; //Aby wycentrowac pionowo napis wzgledem slonca
+	margin: 0 auto;
+	padding: ($navbar__height - $logo__height * $base--s)/2;
+
+    color: inherit;
+    fill: inherit;
+
+	cursor: pointer;
+	
+	@include medium {
+		margin: 0;
+	}
+}
+
+.logo__mark {
+    width: $logo__height * $base--s;
+    height: $logo__height * $base--s;
+
+    pointer-events: none;
+}
+
+.logo__type {
+    font-family: $font__secondary;
+    font-weight: 100;
+    font-size: 2em;
+    line-height: 1; //niebeska otoczka po tab jest łatwiejsza do obliczenia
+
+	pointer-events: none;
+}
+
+.nav {
+	// styling moving burger menu
+	position: absolute;
+	top: $navbar__height;
+	left: 0;
+	
+    width: 100%;
+    height: 100vh;
+
+	background: rgba($text__dark, 0.9);
+	opacity: 0;
+	will-change: opacity;
+	transition: opacity 2.5s ease-out;
+
+	@include medium {
+		position: static;
+		
+		width: auto;
+		height: auto;
+		
+		background: transparent;
+		opacity: 1;
+		transition: none;
+	}
+}
+
+.js-nav--active {
+	opacity: 1;
+}
+
+.nav__list {
+    display: flex;
+	flex-direction: column;
+	
+	@include medium {
+		flex-direction: row;
+	}
+}
+
+.nav__link {
+	display: inline-block;
+
+    width: 100%;
+	padding: ($navbar__height - $nav__link)/2;
+	
+    font-size: $nav__link;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    &:active,
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.nav__btn {
+    position: relative;
+
+    width: $navbar__height;
+    height: $navbar__height;
+
+	cursor: pointer;
+
+	@include medium {
+		display: none;
+	}
+}
+.nav__burger {
+    @include burger--static($navbar__height, $color__fourth);
+}
+
+.js-nav__burger--active {
+    transform: rotate(315deg);
+
+    &:before {
+    transform: rotate(270deg);
+    }
+
+    &:after {
+    transform: translateY(0);
+    }
+}
+
+.js-nav__burger--scroll {
+    background: $color__primary;
+}

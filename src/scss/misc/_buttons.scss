@@ -1,0 +1,63 @@
+@import '../mixins/center';
+@import '../mixins/media_queries';
+.btn {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    padding: 1em 2em;
+    border-radius: 0.8em;
+
+    font-size: 1.25em;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap; //If no space may throw away icon
+    
+    cursor: pointer;
+}
+
+.btn--cta {
+	position: absolute;
+	bottom: 20vh;
+	
+    box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.5);
+
+    $btn__cta: #48993a !default;
+    $btn__cta--active: lighten($btn__cta, 3%) !default;
+
+    background: $btn__cta;
+    color: $text__bright;
+    fill: $text__bright;
+
+    text-align: center;
+
+    transition: all 0.5s cubic-bezier(.25, .8, .25, 1);
+
+    &:hover {
+        background: $btn__cta--active;
+    }
+
+    &:active {
+        background: $btn__cta--active;
+        box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.75);
+	}
+	
+
+    @include center__transform(50%, 0);
+
+    @include medium {
+        bottom: 18vh;
+    }
+
+    @include small {
+        font-size: 1.5em;
+    }
+
+    @include medium {
+        font-size: 1.8em;
+    }
+
+    @include large {
+        font-size: 1.2em;
+	}
+}

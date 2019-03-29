@@ -1,0 +1,44 @@
+@mixin burger--static($container, $bg-color) {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+
+    width: $container/2;
+    height: .2rem;
+    border: 0 transparent;
+
+	background: $bg-color;
+    box-shadow: 0 0 0 transparent;
+    border-radius: 1em;
+
+	cursor: pointer;
+	    transition: transform .5s ease-in-out;
+
+    &::after,
+    &::before {
+        position: absolute;
+        display: block;
+        content: "";
+
+        width: 100%;
+        height: .2rem;
+
+        background: inherit;
+		border-radius: 1em;
+		transition: transform .5s ease-out;
+    }
+
+    &::before {
+		transform: translateY(-.75em);
+	}
+	
+	&::after {
+		transform: translateY(.75em);
+	}
+	
+	&:active,
+    &:focus {
+        outline: 0;
+        border: 0;
+    }
+}
