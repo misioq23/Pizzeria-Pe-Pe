@@ -12,4 +12,8 @@ $navbar__color--primary: $color__fourth;
 $navbar__color--secondary: $color__primary;
 $nav__background--mobile: rgba(#333, .9);
 
+$navbar--scroll: all .25s ease-in;
+$burger--active: transform .35s linear;
+$nav__burger--active: opacity .35s ease-out;
+
 

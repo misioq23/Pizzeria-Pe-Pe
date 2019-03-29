@@ -8,8 +8,8 @@
 	background: $navbar__background--primary;
     color: $navbar__color--primary;
     fill: $navbar__color--primary;
-    // box-shadow: 0 0.02em 1em rgba(0, 0, 0, 0.8);
-    // transition: ease-out 0.3s;
+	// box-shadow: 0 0.02em 1em rgba(0, 0, 0, 0.8);
+	transition: $navbar--scroll;
 }
 
 .js-navbar--scroll {
