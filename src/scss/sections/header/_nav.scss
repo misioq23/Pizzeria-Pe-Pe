@@ -1,0 +1,60 @@
+.nav {
+	// styling moving burger menu
+	position: absolute;
+	top: $navbar__height;
+	left: 0;
+	
+    width: 100%;
+    height: 100vh;
+	
+	background: $nav__background--mobile;
+	
+	opacity: 0;
+	will-change: opacity;
+	transition: opacity 0.5s ease-out;
+
+	@include medium {
+		position: static;
+		
+		width: auto;
+		height: auto;
+		
+		background: none;
+
+		opacity: 1;
+		transition: none;
+	}
+}
+
+.js-navbar__burger--active .nav {
+	opacity: 1;
+}
+
+.nav__list {
+    display: flex;
+	flex-direction: column;
+	
+	@include medium {
+		flex-direction: row;
+	}
+}
+
+.nav__link {
+	display: inline-block;
+
+    width: 100%;
+	padding: ($navbar__height - $nav__link--size)/2;
+	
+    font-size: $nav__link--size;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    &:active,
+    &:hover {
+        text-decoration: underline;
+    }
+}

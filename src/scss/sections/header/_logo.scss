@@ -1,0 +1,35 @@
+.logo {
+	display: flex;
+	align-items: center; //Aby wycentrowac pionowo napis wzgledem slonca
+	
+	margin: 0 auto;
+	padding: ($navbar__height - $logo__height * $base--s)/2;
+
+    color: inherit;
+    fill: inherit;
+
+	cursor: pointer;
+	
+	@include medium {
+		margin: 0;
+		padding: ($navbar__height - $logo__height * $base--m)/2;
+	}
+}
+
+.logo__mark {
+    width: $logo__height * $base--s;
+    height: $logo__height * $base--s;
+
+	pointer-events: none;
+	
+	@include medium {
+		width: $logo__height * $base--m;
+   		height: $logo__height * $base--m;
+	}
+}
+
+.logo__type {
+	font: 100 $logo--size/1 $font__secondary;
+
+	pointer-events: none;
+}

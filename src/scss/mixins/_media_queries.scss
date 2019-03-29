@@ -1,3 +1,4 @@
+@import '../base';
 @mixin small() {
     @media only screen and (min-width: $mq__small) {
         @content;

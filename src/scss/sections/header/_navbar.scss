@@ -1,0 +1,30 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+
+	width: 100%;
+
+	background: $navbar__background--primary;
+    color: $navbar__color--primary;
+    fill: $navbar__color--primary;
+    // box-shadow: 0 0.02em 1em rgba(0, 0, 0, 0.8);
+    // transition: ease-out 0.3s;
+}
+
+.js-navbar--scroll {
+	background: $navbar__background--secondary;
+	color: $navbar__color--secondary;
+    fill: $navbar__color--secondary;
+}
+
+.navbar__wrapper {
+	display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 85em;
+   	height: $navbar__height;
+    margin: 0 auto;
+}
