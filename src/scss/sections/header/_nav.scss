@@ -3,6 +3,7 @@
 	position: absolute;
 	top: $navbar__height;
 	left: 0;
+	z-index: 101;
 	
     width: 100%;
     height: 100vh;
@@ -33,10 +34,11 @@
 }
 
 .nav__list {
-    display: flex;
+    display: none;
 	flex-direction: column;
 	
 	@include medium {
+		display: flex;
 		flex-direction: row;
 	}
 }
@@ -56,7 +58,12 @@
     cursor: pointer;
 
     &:active,
-    &:hover {
-        text-decoration: underline;
-    }
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+.js-navbar__burger--active .nav__list {
+	display: flex;
 }

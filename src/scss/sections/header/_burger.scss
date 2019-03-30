@@ -1,6 +1,7 @@
 @import '../../mixins/burger';
 .burger {
     position: relative;
+	z-index: 101;
 
     width: $navbar__height;
     height: $navbar__height;

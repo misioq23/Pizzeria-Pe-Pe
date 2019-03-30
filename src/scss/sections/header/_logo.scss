@@ -1,7 +1,8 @@
 .logo {
 	display: flex;
 	align-items: center; //Aby wycentrowac pionowo napis wzgledem slonca
-	
+	z-index: 101;
+
 	margin: 0 auto;
 	padding: ($navbar__height - $logo__height * $base--s)/2;
 
@@ -9,7 +10,7 @@
     fill: inherit;
 
 	cursor: pointer;
-	
+
 	@include medium {
 		margin: 0;
 		padding: ($navbar__height - $logo__height * $base--m)/2;
