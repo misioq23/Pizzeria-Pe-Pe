@@ -8,10 +8,10 @@
     height: 100vh;
 	
 	background: $nav__background--mobile;
-	
+
 	opacity: 0;
 	will-change: opacity;
-	transition: $nav__burger--active;
+	transition: $nav__mobile--active;
 
 	@include medium {
 		position: static;
@@ -27,14 +27,9 @@
 }
 
 .js-navbar__burger--active .nav {
-	opacity: 1;
-}
-
-.js-navbar--scroll .nav__link {
 	color: $navbar__color--primary;
-	@include medium {
-		color: $navbar__color--secondary;
-	}
+	
+	opacity: 1;
 }
 
 .nav__list {
