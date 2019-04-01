@@ -2,7 +2,7 @@
 @import 'mixins/center';
 
 //Mobile masthead
-.masthead__mobile {
+.hero__mobile {
     position: relative;
 
     display: block;
@@ -18,7 +18,7 @@
 }
 
 //Desktop masthead
-.masthead__parallax {
+.hero__parallax {
     display: none;
 
     @include medium {
@@ -32,7 +32,7 @@
     }
 }
 
-.masthead__overlay {
+.hero__overlay {
     position: absolute;
     top: 0;
     left: 0;

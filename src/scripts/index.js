@@ -3,14 +3,14 @@ import throttle from 'lodash/throttle';
 
 const navbar = document.querySelector('.navbar');
 const burger = document.querySelector('.burger');
-const masthead = document.querySelector('.masthead');
+const hero = document.querySelector('.hero');
 const navbarHeight = navbar.offsetHeight;
 
 function navbarScroll() {
-	const mastheadHeight = masthead.scrollHeight - navbarHeight;
+	const heroHeight = hero.scrollHeight - navbarHeight;
 
 	window.addEventListener('scroll', throttle(() => {
-		if (window.pageYOffset > mastheadHeight) {
+		if (window.pageYOffset > heroHeight) {
 			navbar.classList.add('js-navbar--scroll');
 		} else {
 			navbar.classList.remove('js-navbar--scroll');
