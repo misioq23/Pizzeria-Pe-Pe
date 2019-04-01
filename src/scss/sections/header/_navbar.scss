@@ -1,38 +1,22 @@
 .navbar {
     position: fixed;
     top: 0;
-    z-index: 99;
+    z-index: 100;
 
 	width: 100%;
 
+	background: $navbar__background--primary;
     color: $navbar__color--primary;
     fill: $navbar__color--primary;
-	transition: $navbar--scroll;
 
-	&::after {
-		position: absolute;
-		display: block;
-		content: '';
-		top: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 100;
-		box-shadow: 0 0.02em 1em rgba(0, 0, 0, 0.8);
-		background: $navbar__background--secondary;
-		opacity: 0;
-		transition: $navbar__after--scroll;
-		will-change: opacity, transform;
-		transform: translateZ(0);
-	}
+	transition: $navbar--scroll;
 }
 
 .js-navbar--scroll {
-
+	background: $navbar__background--secondary;
 	color: $navbar__color--secondary;
 	fill: $navbar__color--secondary;
- &.navbar::after {
-	opacity: 1;
-}
+	box-shadow: 0 0.02em 1em rgba(0, 0, 0, 0.8);
 }
 
 .navbar__wrapper {
