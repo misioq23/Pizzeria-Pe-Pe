@@ -1,0 +1,47 @@
+.headline {
+    @include center__transform (50%, 40%);
+
+    color: $text__bright;
+
+    font-family: $font__secondary;
+    text-align: center;
+}
+
+.headline__primary {
+    margin-bottom: .9em;
+
+    font-weight: 100;
+    text-shadow: 0.1rem 0.05rem #333;
+
+    @include small {
+        margin-bottom: 0.9em;
+        font-size: 5em;
+    }
+
+    @include medium {
+        margin-bottom: 1em;
+        font-size: 5em;
+    }
+
+    @include large {
+        margin-bottom: 1em;
+        font-size: 3em;
+    }
+}
+
+.headline__secondary {
+    font-weight: 100;
+    text-shadow: rem(2) rem(1) #333;
+
+    @include small {
+        font-size: 3em;
+    }
+
+    @include medium {
+        font-size: 3.5em;
+    }
+
+    @include large {
+        font-size: 2em;
+    }
+}
