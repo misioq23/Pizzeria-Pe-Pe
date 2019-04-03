@@ -17,7 +17,7 @@ export default {
 		scss: 'src/scss/**/**/*.scss',
 		js: 'src/scripts/**/*.js',
 		tests: 'test/**/*.js',
-		img: 'src/images/*.{jpg,svg,png}',
+		img: 'src/img/*.{jpg,svg,png}',
 	},
 
 	build: {
