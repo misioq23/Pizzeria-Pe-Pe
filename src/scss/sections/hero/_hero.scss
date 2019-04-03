@@ -1,6 +1,39 @@
 @import 'mixins/media_queries';
 @import 'mixins/center';
 
+.hero {
+	position: relative;
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		bottom: 0;
+		z-index: 1;
+
+		width: 50%;
+		height: 0;
+
+		border-bottom: 3em solid $color__fourth;
+	}
+
+	&::before {
+	left: 0;
+	border-right: 10em solid transparent;
+	}
+
+	&::after {
+	right: 0;
+	border-left: 10em solid transparent;
+	}
+
+	@include medium {
+		&::after,
+		&::before {
+			display: none;
+		}
+	}
+}
+
 //Mobile masthead
 .hero__mobile {
     position: relative;
@@ -8,7 +41,7 @@
     display: block;
     height: 90vh;
 
-    background-image: url(../img/masthead__bg.jpg);
+    background-image: url(../img/hero__sm.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -25,11 +58,14 @@
         display: block;
         height: 100vh;
 
-        background-image: url(../img/masthead__bg.jpg);
+        background-image: url(../img/hero__md.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         //background-position-y: 0; //Parallax background doesn't "jump" when refresh
-    }
+	}
+	@include large {
+		background-image: url(../img/hero__bg.jpg);
+	}
 }
 
 .hero__overlay {
