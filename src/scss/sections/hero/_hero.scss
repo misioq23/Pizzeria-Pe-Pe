@@ -34,7 +34,7 @@
 	}
 }
 
-//Mobile masthead
+//Mobile hero
 .hero__mobile {
     position: relative;
 
@@ -50,7 +50,7 @@
     }
 }
 
-//Desktop masthead
+//Desktop hero
 .hero__parallax {
     display: none;
 
@@ -60,8 +60,8 @@
 
         background-image: url(../img/hero__md.jpg);
         background-repeat: no-repeat;
-        background-size: cover;
-        //background-position-y: 0; //Parallax background doesn't "jump" when refresh
+		background-size: cover;
+		background-attachment: fixed;
 	}
 	@include large {
 		background-image: url(../img/hero__bg.jpg);
