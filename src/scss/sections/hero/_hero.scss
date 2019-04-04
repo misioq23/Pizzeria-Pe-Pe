@@ -1,6 +1,8 @@
 @import 'mixins/media_queries';
 @import 'mixins/center';
-
+.section {
+	background: white;
+}
 $hero__triangle--width: 50vw;
 $hero__triangle--height: 10vh;
 
@@ -8,6 +10,21 @@ $hero__height--mobile: 90vh;
 $hero__height--desktop: 100vh;
 .hero {
 	position: relative;
+	height: $hero__height--mobile;
+
+	background-image: url(../img/hero__sm.jpg);
+    background-repeat: no-repeat;
+	background-size: cover;
+	
+	overflow: hidden;
+
+	@include small {
+		background-image: url(../img/hero__md.jpg);
+	}
+	@include medium {
+		height: $hero__height--desktop;
+		background: none;
+	}
 	&::before,
 	&::after {
 		position: absolute;
@@ -39,50 +56,35 @@ $hero__height--desktop: 100vh;
 	}
 }
 
-//Mobile hero
-.hero__mobile {
-    position: relative;
-
-    height: $hero__height--mobile;
-
-    background-image: url(../img/hero__sm.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    @include medium {
-        display: none;
-    }
+.hero__parallax {
+	height: 100vh;
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
 }
 
-//Desktop hero
-.hero__parallax {
-    display: none;
+.hero__parallax-img {
+	position: fixed;
+    left: 0;
+	right: 0;
+	top: -20vh;
 
-    @include medium {
-        display: block;
-        height: $hero__height--desktop;
-
-        background-image: url(../img/hero__md.jpg);
-        background-repeat: no-repeat;
-		background-size: cover;
-		background-attachment: fixed;
-	}
-	@include large {
-		background-image: url(../img/hero__bg.jpg);
-	}
+	margin: auto 0;
+	z-index: -100;
+	will-change: transform;
 }
 
 .hero__overlay {
     position: absolute;
     top: 0;
-    left: 0;
-
-    width: 100%;
-    height: $hero__height--mobile;
+	left: 0;
+	right: 0;
+	bottom: 0;
 
     background: rgba(0, 0, 0, 0.25);
-
-    @include medium {
-        height: $hero__height--desktop;
-    }
 }
+
+
