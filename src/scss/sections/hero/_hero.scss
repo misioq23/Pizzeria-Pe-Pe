@@ -13,6 +13,16 @@ $hero__height--desktop: 100vh;
     background-repeat: no-repeat;
 	background-size: cover;
 
+	@include small {
+		background-image: url(../img/hero__md.jpg);
+	}
+
+	@include medium {
+		height: $hero__height--desktop;
+		background: none;
+	}
+
+	// Triangle in mobile
 	&::before,
 	&::after {
 		position: absolute;
@@ -34,13 +44,7 @@ $hero__height--desktop: 100vh;
 	border-left: $hero__triangle--width solid transparent;
 	}
 
-	@include small {
-		background-image: url(../img/hero__md.jpg);
-	}
-
 	@include medium {
-		height: $hero__height--desktop;
-		background: none;
 		&::after,
 		&::before {
 			display: none;
