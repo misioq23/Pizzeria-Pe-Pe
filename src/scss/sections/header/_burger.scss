@@ -8,7 +8,7 @@
 
 	cursor: pointer;
 
-	@include medium {
+	@include laptop {
 		display: none;
 	}
 }

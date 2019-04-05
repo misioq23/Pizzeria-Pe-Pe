@@ -13,17 +13,17 @@
     font-weight: 100;
     text-shadow: .05em .05rem #333;
 
-    @include small {
+    @include tablet {
         margin-bottom: .9em;
         font-size: 5em;
     }
 
-    @include medium {
+    @include laptop {
         margin-bottom: 1em;
         font-size: 5em;
     }
 
-    @include large {
+    @include desktop {
         margin-bottom: 1em;
         font-size: 3em;
     }
@@ -33,15 +33,15 @@
     font-weight: 100;
     text-shadow: .125rem .0625rem #333;
 
-    @include small {
+    @include tablet {
         font-size: 3em;
     }
 
-    @include medium {
+    @include laptop {
         font-size: 3.5em;
     }
 
-    @include large {
+    @include desktop {
         font-size: 2em;
     }
 }

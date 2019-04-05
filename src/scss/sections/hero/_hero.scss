@@ -13,11 +13,11 @@ $hero__height--desktop: 100vh;
     background-repeat: no-repeat;
 	background-size: cover;
 
-	@include small {
+	@include tablet {
 		background-image: url(../img/hero__md.jpg);
 	}
 
-	@include medium {
+	@include laptop {
 		height: $hero__height--desktop;
 		background: none;
 	}
@@ -44,7 +44,7 @@ $hero__height--desktop: 100vh;
 	border-left: $hero__triangle--width solid transparent;
 	}
 
-	@include medium {
+	@include laptop {
 		&::after,
 		&::before {
 			display: none;
@@ -54,7 +54,7 @@ $hero__height--desktop: 100vh;
 
 .hero__parallax {
 	display: none;
-	@include medium {
+	@include laptop {
 		position: fixed;
 		z-index: -1;
 		display: inline;

@@ -1,18 +1,24 @@
 @import '../base';
-@mixin small() {
-    @media only screen and (min-width: $mq__small) {
+@mixin horizontal() {
+	@media only screen and (min-width: $mq__sm) {
         @content;
     }
 }
 
-@mixin medium() {
-    @media only screen and (min-width: $mq__medium) {
+@mixin tablet() {
+    @media only screen and (min-width: $mq__md) {
         @content;
     }
 }
 
-@mixin large() {
-    @media only screen and (min-width: $mq__large) {
+@mixin laptop() {
+    @media only screen and (min-width: $mq__lg) {
+        @content;
+    }
+}
+
+@mixin desktop() {
+    @media only screen and (min-width: $mq__xl) {
         @content;
     }
 }

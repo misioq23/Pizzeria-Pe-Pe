@@ -11,7 +11,7 @@
 
 	cursor: pointer;
 
-	@include medium {
+	@include laptop {
 		margin: 0;
 		padding: ($navbar__height - $logo__height * $base--m)/2;
 	}
@@ -23,7 +23,7 @@
 
 	pointer-events: none;
 	
-	@include medium {
+	@include laptop {
 		width: $logo__height * $base--m;
    		height: $logo__height * $base--m;
 	}

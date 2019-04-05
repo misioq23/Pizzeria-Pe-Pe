@@ -14,7 +14,7 @@
 	will-change: opacity;
 	transition: $nav__mobile--active;
 
-	@include medium {
+	@include laptop {
 		position: static;
 		
 		width: auto;
@@ -37,7 +37,7 @@
     display: none;
 	flex-direction: column;
 	
-	@include medium {
+	@include laptop {
 		display: flex;
 		flex-direction: row;
 	}

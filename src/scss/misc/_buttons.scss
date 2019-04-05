@@ -45,19 +45,16 @@
 
     @include center__transform(50%, 0);
 
-    @include medium {
-        bottom: 18vh;
+    @include tablet {
+		font-size: 1.5em;
     }
+	
+	@include laptop {
+		bottom: 18vh;
+		font-size: 1.8em;
+	}
 
-    @include small {
-        font-size: 1.5em;
-    }
-
-    @include medium {
-        font-size: 1.8em;
-    }
-
-    @include large {
+    @include desktop {
         font-size: 1.2em;
 	}
 }
