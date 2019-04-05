@@ -41,8 +41,12 @@
 	
     <main class="main">
         <section class="section hero">
-            <div class="hero__overlay"></div>
-  			<img class="hero__parallax" src="./img/hero__bg.jpg" alt="">
+			<div class="hero__overlay"></div>
+			<picture >
+    			<source media="(max-width: 62em)" sizes="1px" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 1w"/>
+    			<source media="(min-width: 120em)" srcset="./img/hero__xl.jpg"/>
+    			<img class="hero__parallax" src="./img/hero__lg.jpg" alt=""/>
+			</picture>
             <header class="headline">
                 <h1 class="headline__primary">Restauracja Pizzeria&#160;Pe&#8209;Pe</h1>
                 <h2 class="headline__secondary">Stara Miłosna</h2>
