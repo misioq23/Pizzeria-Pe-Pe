@@ -27,5 +27,11 @@
 
     max-width: 85em;
    	height: $navbar__height;
-    margin: 0 auto;
+	margin: 0 auto;
+	@include laptop {
+		justify-content: space-around;
+	}
+	@include desktop {
+		justify-content: space-between;
+	}
 }
