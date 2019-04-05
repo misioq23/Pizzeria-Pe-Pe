@@ -11,9 +11,10 @@ function navbarScroll() {
 	const heroHeight = hero.getBoundingClientRect().height - navbarHeight;
 
 	window.addEventListener('scroll', throttle(() => {
-		if (window.pageYOffset < heroHeight) {
+		const actualPosition = window.pageYOffset;
+		if (actualPosition < heroHeight) {
 			navbar.classList.remove('js-navbar--scroll');
-			heroParallax.style.transform = `translateY(-${(window.pageYOffset / 3).toFixed()}px)`;
+			heroParallax.style.transform = `translateY(-${(actualPosition / 3).toFixed()}px)`;
 		} else {
 			navbar.classList.add('js-navbar--scroll');
 		}
