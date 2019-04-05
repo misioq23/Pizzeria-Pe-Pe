@@ -2,7 +2,8 @@
 	margin-bottom: 15vh;
     color: $text__bright;
 
-    font-family: $font__secondary;
+	font-family: $font__secondary;
+	line-height: 1;
 	text-align: center;
 	z-index: 2;
 	@include laptop {
@@ -27,8 +28,8 @@
     }
 
     @include desktop {
-        margin-bottom: 1em;
-        font-size: 5em;
+        margin-bottom: .5em;
+        font-size: 4em;
     }
 }
 
@@ -45,6 +46,6 @@
     }
 
     @include desktop {
-        font-size: 2em;
+        font-size: 3em;
     }
 }
