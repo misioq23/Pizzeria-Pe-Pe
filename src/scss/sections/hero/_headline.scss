@@ -1,10 +1,13 @@
 .headline {
-    @include center__transform (50%, 45%);
-
+	margin-bottom: 15vh;
     color: $text__bright;
 
     font-family: $font__secondary;
-    text-align: center;
+	text-align: center;
+	z-index: 2;
+	@include laptop {
+		margin-bottom: 20vh;
+	}
 }
 
 .headline__primary {
@@ -25,7 +28,7 @@
 
     @include desktop {
         margin-bottom: 1em;
-        font-size: 3em;
+        font-size: 5em;
     }
 }
 

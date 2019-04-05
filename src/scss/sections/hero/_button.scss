@@ -1,10 +1,8 @@
 $btn__cta: #48993a !default;
 $btn__cta--active: lighten($btn__cta, 3%) !default;
-
 .hero__btn {
-	position: absolute;
-	bottom: 20vh;
-	@include center__transform(50%, 0);
+	margin: 0 auto;
+	z-index: 2;
 }
 
 .hero__btn--cta {
