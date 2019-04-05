@@ -4,7 +4,7 @@ import throttle from 'lodash/throttle';
 const navbar = document.querySelector('.navbar');
 const burger = document.querySelector('.burger');
 const hero = document.querySelector('.hero');
-const heroParallax = document.querySelector('.hero__parallax-img');
+const heroParallax = document.querySelector('.hero__parallax');
 const navbarHeight = navbar.offsetHeight;
 
 function navbarScroll() {
@@ -13,7 +13,7 @@ function navbarScroll() {
 	window.addEventListener('scroll', throttle(() => {
 		if (window.pageYOffset < heroHeight) {
 			navbar.classList.remove('js-navbar--scroll');
-			heroParallax.style.transform = `translateY(-${window.pageYOffset / 3}px)`;
+			heroParallax.style.transform = `translateY(-${(window.pageYOffset / 3).toFixed()}px)`;
 		} else {
 			navbar.classList.add('js-navbar--scroll');
 		}
