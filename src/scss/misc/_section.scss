@@ -1,4 +1,26 @@
 .section {
 	position: relative;
+	padding: 4.5em 0;
 	background: #fff;
+
+    @include tablet {
+        padding: 8em 0;
+    }
+}
+
+.section__wrapper {
+	margin: 0 auto;
+	width: 90%;
+    max-width: em(960);
+}
+
+.section__header {
+    margin-bottom: 1.5em;
+    font-family: $font__secondary;
+    font-weight: 100;
+    text-align: center;
+
+    @include laptop {
+        margin-bottom: 1.5em;
+    }
 }
