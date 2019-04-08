@@ -6,6 +6,7 @@ $hero__triangle--height: 10vh;
 $hero__height--mobile: 90vh;
 $hero__height--desktop: 100vh;
 .hero {
+	position: relative;
 	overflow: hidden;
 	height: $hero__height--mobile;
 	background-image: url(../img/hero__sm.jpg);
