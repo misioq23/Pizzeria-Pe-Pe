@@ -3,8 +3,11 @@
     flex-direction: column;
     align-self: flex-start;
         
-    width: 100%; //IE FIX BUG
-    margin-bottom: 3em;
+	width: 100%; //IE FIX BUG
+	margin-bottom: 3em;
+	@include laptop {
+		margin: 0 3em 3em;
+	}
 }
 
 .card__img {
