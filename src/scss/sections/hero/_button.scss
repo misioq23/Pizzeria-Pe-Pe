@@ -3,6 +3,8 @@ $btn__cta--active: lighten($btn__cta, 3%) !default;
 .hero__btn {
 	margin: 0 auto;
 	z-index: 2;
+
+	will-change: opacity;
 }
 
 .hero__btn--cta {

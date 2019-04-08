@@ -1,11 +1,14 @@
 .headline {
 	margin-bottom: 15vh;
+	z-index: 2;
+	
     color: $text__bright;
-
+	
 	font-family: $font__secondary;
 	line-height: 1;
 	text-align: center;
-	z-index: 2;
+	will-change: opacity;
+	
 	@include laptop {
 		margin-bottom: 20vh;
 	}
