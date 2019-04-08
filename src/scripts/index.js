@@ -16,7 +16,7 @@ function navbarScroll() {
 	const heroBtnDistanceTop = (window.pageYOffset + heroBtn.getBoundingClientRect().top);
 	const heroBtnCheckpoint = heroBtnDistanceTop / 2;
 
-	window.addEventListener('scroll', throttle(() => {
+	const scrollEvents = () => {
 		const actualPosition = window.pageYOffset;
 		if (actualPosition < heroHeight) {
 			navbar.classList.remove('js-navbar--scroll');
@@ -35,16 +35,18 @@ function navbarScroll() {
 		} else {
 			heroBtn.style.opacity = '1';
 		}
-	}, 10));
-}
+	};
 
-window.addEventListener('resize', debounce(() => {
-	navbarScroll();
-}, 500));
+	window.addEventListener('scroll', throttle(scrollEvents, 10));
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 	navbarScroll();
 });
+
+window.addEventListener('resize', debounce(() => {
+	navbarScroll();
+}, 500));
 
 burger.addEventListener('click', () => {
 	navbar.classList.toggle('js-navbar__burger--active');
