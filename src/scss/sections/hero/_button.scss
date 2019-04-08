@@ -14,7 +14,7 @@ $btn__cta--active: lighten($btn__cta, 3%) !default;
 
     // text-align: center; // i dont remember why i used this
 
-    transition: all 0.5s cubic-bezier(.25, .8, .25, 1);
+    transition: box-shadow 0.25s cubic-bezier(.25, .8, .25, 1);
 
     &:hover {
         background: $btn__cta--active;
