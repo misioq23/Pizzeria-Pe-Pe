@@ -1,0 +1,31 @@
+$primary__delivery: #6BA42C !default;
+$secondary__delivery: #FFF !default;
+
+.delivery {
+    background: $primary__delivery;
+    color: $secondary__delivery;
+    fill: $secondary__delivery;
+    border-color: $secondary__delivery;
+
+}
+
+.delivery__box {
+    @include tablet {
+        background: url(../img/road.svg) top center;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: top right;
+    }
+}
+
+.delivery__road {
+    display: none;
+    z-index: 5;
+    @include laptop {
+        display: block;
+        position: absolute;
+        bottom: -10%;
+        right: -26%;
+        height: 105%;
+    }
+}
