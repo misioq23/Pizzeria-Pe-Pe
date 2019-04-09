@@ -9,13 +9,6 @@ $secondary__about: $color__secondary;
     text-align: center;
 }
 
-.about__container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: flex-start;
-}
-
 .about .card {
 	width: 100%; // For IE
 	@include tablet {

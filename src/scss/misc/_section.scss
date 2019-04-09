@@ -2,21 +2,25 @@
 	position: relative;
 	padding: 4.5em 0;
 	background: #fff;
-
     @include laptop {
         padding: 8em 0;
     }
 }
 
 .section__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 	margin: 0 auto;
 	width: 90%;
     max-width: 75em;
 }
 
 .section__header {
+	flex: 0 0 100%;
+	width: 100%;
     margin-bottom: 1.5em;
     font-family: $font__secondary;
     font-weight: 100;
-    text-align: center;
+	text-align: center;
 }
