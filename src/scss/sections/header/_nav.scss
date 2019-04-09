@@ -1,21 +1,21 @@
 .nav {
-	// styling moving burger menu
+	// styling burger menu
 	position: absolute;
 	top: $navbar__height;
 	left: 0;
 	visibility: hidden;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 	
 	background: $nav__background--mobile;
 
 	opacity: 0;
 	will-change: opacity;
-	transition: $nav__mobile--active, visibility 0s 0.35s;;
+	transition: $nav__mobile--active, visibility 0s .35s;
 
 	@include laptop {
 		position: static;
-		visibility: visible;
+		visibility: visible;	
 		width: auto;
 		height: auto;
 		
@@ -34,7 +34,7 @@
 }
 
 .nav__list {
-    display: flex;
+	display: flex;
 	flex-direction: column;
 	@include laptop {
 		flex-direction: row;
