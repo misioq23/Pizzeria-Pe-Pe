@@ -1,0 +1,68 @@
+$primary__loyalty: #FFF !default;
+$secondary__loyalty: #F58220 !default;
+
+.loyalty {
+    background-color: $primary__loyalty;
+    background-image: url('../img/sunny--watermark.svg');
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: -25vw;
+    color: $secondary__loyalty;
+    fill: $secondary__loyalty;
+    z-index: 2;
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		bottom: 0;
+		left: -25%;
+		z-index: -1;
+		width: 150%;
+		height: 100%;
+		background: inherit;
+		transform: rotate(2deg);
+		transform-origin: 0 0;
+	}
+	&::before {
+		height: 50%;
+		background: darken(#6BA42C, 5%);
+		transform: rotate(4deg);
+		transform-origin: 1% 0;
+	}
+
+	& .section__wrapper {
+		align-items: baseline;
+	}
+	
+	& .card {
+		width: 100vw;
+		@include tablet {
+			max-width: 20em;
+			text-align: left;
+		}
+		@include laptop {
+			max-width: 25em;
+		}
+		@include desktop {
+			max-width: 32em;
+		}
+	}
+	
+	& .list-group {
+		width: 100vw;
+		font-weight: 500;
+		@include tablet {
+			max-width: 20em;
+		}
+		@include laptop {
+			max-width: 25em;
+		}
+		@include desktop {
+			max-width: 32em;
+		}
+	}
+}
+
+.no-center {
+    align-items: baseline;
+}
