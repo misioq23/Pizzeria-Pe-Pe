@@ -3,7 +3,7 @@
 $hero__triangle--width: 50vw;
 $hero__triangle--height: 10vh;
 
-$hero__height--mobile: 90vh;
+$hero__height--mobile: 100vh;
 $hero__height--desktop: 100vh;
 .hero {
 	position: relative;
@@ -36,12 +36,12 @@ $hero__height--desktop: 100vh;
 
 	&::before {
 	left: 0;
-	border-right: $hero__triangle--width solid transparent;
-	}
-
-	&::after {
-	right: 0;
 	border-left: $hero__triangle--width solid transparent;
+}
+
+&::after {
+	right: 0;
+	border-right: $hero__triangle--width solid transparent;
 	}
 
 	@include laptop {
