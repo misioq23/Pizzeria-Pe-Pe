@@ -1,0 +1,81 @@
+$primary__offer: $color__third;
+$secondary__offer: $color__fourth;
+.offer {
+    background: $primary__offer;
+    color: $secondary__offer;
+    fill: $secondary__offer;
+    border-top: 0.1em solid $primary__offer;
+    border-bottom: 0.1em solid $primary__offer;
+    
+    z-index: 10;
+    text-align: center;
+
+    @include tablet {
+        text-align: left;
+    }
+
+    &::before,
+    &::after {
+		position: absolute;
+        left: 0;
+		width: 100vw;
+        height: 1.5em;
+        background: url(../img/rip.svg) bottom;
+        background-size: 120%;
+		content: '';
+        @include laptop {
+            height: 2em;
+        }
+        @include desktop {
+            height: 3.125em;
+        }
+	}
+	&::before {
+        bottom: 100%;
+        transform: rotate(180deg);
+    }
+
+    &::after {
+        top: 100%;
+	}
+	& .card {
+		margin-bottom: 0;
+		width: 100%;
+		text-align: center;
+		@include tablet {
+			max-width: 50%;
+		}
+	}
+}
+
+.offer__btn {
+    position: relative; //border inside
+	align-self: center;
+    padding: 1em 1.5em;
+    border: .125em solid $secondary__offer;
+
+    background: $secondary__offer;
+    color: $primary__offer;
+    fill: $primary__offer;
+
+    font-weight: 700;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $primary__offer;
+    }
+
+    //making border inside
+    &::before {
+        $border__thick: .1em;
+        content: '';
+        position: absolute;
+        top: $border__thick;
+        left: $border__thick;
+        right: $border__thick;
+        bottom: $border__thick;
+        border-radius: .7em;
+        border: .125em solid $primary__offer;
+    }
+}
