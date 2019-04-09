@@ -1,11 +1,10 @@
 .card {
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
         
 	width: 100%; //IE FIX BUG
 	margin-bottom: 3em;
-	@include laptop {
+	@include tablet {
 		margin: 0 3em 3em;
 	}
 }
