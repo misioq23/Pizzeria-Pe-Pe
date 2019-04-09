@@ -1,5 +1,7 @@
 @import '../mixins/center';
 @import '../mixins/media_queries';
+$btn__icon: 1.6em;
+$btn__icon--big: 3.5rem;
 .btn {
     display: flex;
     flex-wrap: nowrap;
@@ -14,4 +16,15 @@
     white-space: nowrap; //If no space may throw away icon
     
     cursor: pointer;
+}
+
+.btn__icon {
+    width: $btn__icon;
+    height: $btn__icon;
+    margin-right: 0.5em;
+}
+
+.btn__icon--big {
+    width: $btn__icon--big;
+    height: $btn__icon--big;
 }
