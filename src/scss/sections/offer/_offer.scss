@@ -44,6 +44,7 @@ $secondary__offer: $color__fourth;
 		text-align: center;
 		@include tablet {
 			max-width: 50%;
+			text-align: left;
 		}
 	}
 }
