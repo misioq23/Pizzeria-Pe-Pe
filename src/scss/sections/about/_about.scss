@@ -10,7 +10,7 @@ $secondary__about: $color__secondary;
 }
 
 .about .card {
-	width: 100%; // For IE
+	width: 100vw; // For IE
 	@include tablet {
 		max-width: 18.27em;
 	}
