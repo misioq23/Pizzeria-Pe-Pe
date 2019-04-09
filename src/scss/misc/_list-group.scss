@@ -1,8 +1,9 @@
 .list-group {
-	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
 }
 .list-group__item {
-	text-align: left;
 	margin-bottom: 1em;
 }
 .list-group__img {
