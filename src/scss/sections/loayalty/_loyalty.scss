@@ -6,10 +6,17 @@ $secondary__loyalty: #F58220 !default;
     background-image: url('../img/sunny--watermark.svg');
     background-repeat: no-repeat;
 	background-size: cover;
-	background-position: -25vw;
+	background-position: -25vw 50vh;
     color: $secondary__loyalty;
     fill: $secondary__loyalty;
 	z-index: 2;
+	@include tablet {
+		background-position: -25vw 0;
+	}
+	@include desktop {
+		background-size: 65%;
+		background-position: -5vw 2vh;
+	}
 	// Section separator
 	&::before,
 	&::after {
