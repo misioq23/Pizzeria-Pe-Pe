@@ -47,20 +47,6 @@ $secondary__loyalty: #F58220 !default;
 			max-width: 32em;
 		}
 	}
-	
-	& .list-group {
-		width: 100vw;
-		font-weight: 500;
-		@include tablet {
-			max-width: 20em;
-		}
-		@include laptop {
-			max-width: 25em;
-		}
-		@include desktop {
-			max-width: 32em;
-		}
-	}
 }
 
 .no-center {
