@@ -39,10 +39,10 @@ $secondary__offer: $color__fourth;
         top: 100%;
 	}
 	& .card {
-		margin-bottom: 0;
 		width: 100%;
 		text-align: center;
 		@include tablet {
+			margin: 0;
 			max-width: 50%;
 			text-align: left;
 		}
