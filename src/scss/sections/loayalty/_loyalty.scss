@@ -9,7 +9,8 @@ $secondary__loyalty: #F58220 !default;
 	background-position: -25vw;
     color: $secondary__loyalty;
     fill: $secondary__loyalty;
-    z-index: 2;
+	z-index: 2;
+	// Section separator
 	&::before,
 	&::after {
 		position: absolute;
@@ -29,13 +30,10 @@ $secondary__loyalty: #F58220 !default;
 		transform: rotate(4deg);
 		transform-origin: 1% 0;
 	}
-
-	& .section__wrapper {
-		align-items: baseline;
-	}
 	
 	& .card {
 		width: 100vw;
+		text-align: center;
 		@include tablet {
 			max-width: 20em;
 			text-align: left;
@@ -47,8 +45,4 @@ $secondary__loyalty: #F58220 !default;
 			max-width: 32em;
 		}
 	}
-}
-
-.no-center {
-    align-items: baseline;
 }
