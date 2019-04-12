@@ -5,27 +5,30 @@ $secondary__delivery: #FFF !default;
     background: $primary__delivery;
     color: $secondary__delivery;
     fill: $secondary__delivery;
-    border-color: $secondary__delivery;
-
-}
-
-.delivery__box {
-    @include tablet {
-        background: url(../img/road.svg) top center;
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-        background-position: top right;
-    }
-}
-
-.delivery__road {
-    display: none;
-    z-index: 5;
-    @include laptop {
-        display: block;
-        position: absolute;
-        bottom: -10%;
-        right: -26%;
-        height: 105%;
-    }
+	border-color: $secondary__delivery;
+	&::before {
+		@include laptop {
+			position: absolute;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			bottom: -1em;
+			right: -60vw;
+			content: '';
+			background-image: url(../img/delivery__road.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+	& .section__wrapper {
+		@include laptop {
+			justify-content: flex-start;
+		}
+	}
+	& .list-group {
+		width: 100%;
+		@include laptop {
+			max-width: 60%;
+		}
+	}
 }
