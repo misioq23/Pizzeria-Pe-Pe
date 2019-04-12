@@ -7,19 +7,19 @@ html {
     border-style: solid;
     border-color: blue;
 
-    @include small {
+    @include tablet {
         border-width: $border;
         border-style: solid;
         border-color: green;
     }
 
-    @include medium {
+    @include laptop {
         border-width: $border;
         border-style: solid;
         border-color: yellow;
     }
 
-    @include large {
+    @include desktop {
         border-width: $border;
         border-style: solid;
         border-color: purple;
