@@ -1,0 +1,23 @@
+.media {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 4em;
+	text-align: justify;
+	@include tablet {
+		flex-direction: row;
+	}
+}
+
+.media__img {
+	margin: 0 0 1em 0;
+	width: 5em;
+	min-width: 5em;
+	height: 5em;
+	@include tablet {
+		margin: 0 2em 0 0;
+		width: 4em;
+		min-width: 4em;
+		height: 4em;
+	}
+}
