@@ -13,7 +13,7 @@ $secondary__loyalty: #F58220 !default;
 	@include tablet {
 		background-position: -25vw 0;
 	}
-	@include desktop {
+	@include laptop {
 		background-size: 65%;
 		background-position: -5vw 2vh;
 	}
