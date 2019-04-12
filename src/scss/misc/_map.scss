@@ -1,0 +1,22 @@
+.map {
+    position: relative;
+    margin-top: 4em;
+    min-height: 50vh;
+	background: lighten($secondary__contact, 40%);
+    color: $primary__contact;
+    
+    @include tablet {
+		margin: 0;
+		min-height: auto;
+    }
+}
+.map__container {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.map__text {
+    @include center__transform(50%, 50%);
+}

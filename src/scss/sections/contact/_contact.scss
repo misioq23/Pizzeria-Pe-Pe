@@ -1,0 +1,27 @@
+$primary__contact: $color__fourth;
+$secondary__contact: $text__dark;
+.contact {
+    background: $primary__contact;
+    color: $secondary__contact;
+    fill: $secondary__contact;
+    padding-bottom:0;
+    z-index: 5;
+    
+    @include tablet {
+        padding-bottom: 5em;
+	}
+
+	& .map {
+		width: 100%;
+		@include tablet {
+			width: 50%;
+		}
+	}
+}
+
+.contact__btn {
+    padding: 1em 0;
+    background: $primary__contact;
+    color: $secondary__contact;
+    fill: $secondary__contact;
+}
