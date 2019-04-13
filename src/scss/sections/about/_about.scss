@@ -7,15 +7,14 @@ $secondary__about: $color__secondary;
     fill: $secondary__about;
     border-color: $secondary__about;
     text-align: center;
-}
+	.card {
+		width: 100vw; // For IE
+		@include tablet {
+			max-width: 18.27em;
+		}
 
-.about .card {
-	width: 100vw; // For IE
-	@include tablet {
-		max-width: 18.27em;
-	}
-
-	@include desktop {
-		max-width: 22em;
+		@include desktop {
+			max-width: 22em;
+		}
 	}
 }
