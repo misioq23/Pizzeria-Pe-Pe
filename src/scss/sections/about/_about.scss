@@ -8,7 +8,7 @@ $secondary__about: $color__secondary;
     border-color: $secondary__about;
     text-align: center;
 	.card {
-		width: 100vw; // For IE
+		width: 100%; // For IE
 		@include tablet {
 			max-width: 18.27em;
 		}
