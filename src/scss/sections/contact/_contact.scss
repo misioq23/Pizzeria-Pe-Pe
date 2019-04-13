@@ -11,14 +11,25 @@ $secondary__contact: $text__dark;
         padding-bottom: 5em;
 	}
 
-	& .map {
+	ul {
+		@include tablet {
+			max-width: 50%;
+		}
+		@include laptop {
+			max-width: 40%;
+		}
+	}
+	.map {
 		width: 100%;
 		@include tablet {
-			width: 50%;
+			max-width: 45%;
+		}
+		@include laptop {
+			max-width: 60%;
 		}
 	}
 
-	& .list-group__item:last-child {
+	.list-group__item:last-child {
 		margin: 0;
 	}
 }
