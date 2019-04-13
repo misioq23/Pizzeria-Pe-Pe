@@ -1,6 +1,42 @@
-.contact__btn {
-    padding: 1em 0;
-    background: $primary__contact;
-    color: $secondary__contact;
-    fill: $secondary__contact;
+$first: $color__third;
+$second: #fff;
+
+.chip {
+	display: flex;
+	align-items: center;
+	position: relative;
+	background: $second;
+	color: $first;
+	fill: $second;
+
+	//making border outside the button
+    &::before {
+        $border__thick: -.1em;
+        content: '';
+        position: absolute;
+        top: $border__thick;
+        left: $border__thick;
+        right: $border__thick;
+        bottom: $border__thick;
+		border-radius: 2em;
+		border: .1em solid $first;
+    }
+	
+}
+
+.chip__img {
+	width: 4em;
+	height: 4em;
+	margin-right: .5em;
+	padding: .8em;
+	background: $first;
+	border-radius: 50% ;
+	border: .3em solid $second;
+}
+
+.chip__text {
+	padding-right: 1.75em;
+	font-size: 1.25em;
+	line-height: 1.3;
+	font-weight: 500;
 }
