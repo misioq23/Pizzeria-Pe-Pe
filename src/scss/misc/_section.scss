@@ -17,8 +17,10 @@
 }
 
 .section__wrapper--fluid {
+	justify-content: center;
 	width: 100%;
 	@include tablet {
+		justify-content: space-between;
 		width: 90%;
 	}
 }

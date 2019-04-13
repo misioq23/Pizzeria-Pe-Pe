@@ -17,4 +17,8 @@ $secondary__contact: $text__dark;
 			width: 50%;
 		}
 	}
+
+	& .list-group__item:last-child {
+		margin: 0;
+	}
 }
