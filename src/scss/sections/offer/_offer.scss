@@ -48,35 +48,3 @@ $secondary__offer: $color__fourth;
 		}
 	}
 }
-
-.offer__btn {
-    position: relative; //border inside
-	align-self: center;
-    padding: 1em 1.5em;
-    border: .125em solid $secondary__offer;
-
-    background: $secondary__offer;
-    color: $primary__offer;
-    fill: $primary__offer;
-
-    font-weight: 700;
-
-    &:hover,
-    &:active,
-    &:focus {
-        color: $primary__offer;
-    }
-
-    //making border inside
-    &::before {
-        $border__thick: .1em;
-        content: '';
-        position: absolute;
-        top: $border__thick;
-        left: $border__thick;
-        right: $border__thick;
-        bottom: $border__thick;
-        border-radius: .7em;
-        border: .125em solid $primary__offer;
-    }
-}
