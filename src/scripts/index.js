@@ -1,7 +1,7 @@
 import debounce from 'lodash/debounce';
 import navbarScroll from './scroll';
 import smoothScroll from './smoothScroll';
-import config from './config';
+import { elements, elementStrings } from './config';
 
 document.addEventListener('DOMContentLoaded', () => {
 	navbarScroll();
@@ -11,8 +11,8 @@ window.addEventListener('resize', debounce(() => {
 	navbarScroll();
 }, 500));
 
-config.DOM.burger.addEventListener('click', () => {
-	config.DOM.navbar.classList.toggle('js-navbar__burger--active');
+elements.burger.addEventListener('click', () => {
+	elements.navbar.classList.toggle(elementStrings.burgerActive);
 });
 
 const handleClick = (event) => {
@@ -24,4 +24,4 @@ const handleClick = (event) => {
 	}
 };
 
-config.DOM.navbar.addEventListener('click', handleClick);
+elements.navbar.addEventListener('click', handleClick);

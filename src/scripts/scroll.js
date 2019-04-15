@@ -1,5 +1,5 @@
 import throttle from 'lodash/throttle';
-import config from './config';
+import { elements, elementStrings } from './config';
 
 function opacityDecrease(actualPosition, elementDistanceFromTop, startFadingPosition = 0) {
 	const opacity = (1 - ((actualPosition - startFadingPosition) / (elementDistanceFromTop - startFadingPosition))).toFixed(2);
@@ -9,20 +9,20 @@ function opacityDecrease(actualPosition, elementDistanceFromTop, startFadingPosi
 
 function refreshHeader(actualPosition, checkpoint) {
 	if (actualPosition < checkpoint) {
-		config.DOM.navbar.classList.remove('js-navbar--scroll');
+		elements.navbar.classList.remove(elementStrings.navbarActive);
 		// Parallax
-		config.DOM.heroParallax.style.transform = `translateY(-${(actualPosition / 3).toFixed()}px)`;
+		elements.heroParallax.style.transform = `translateY(-${(actualPosition / 3).toFixed()}px)`;
 	} else {
-		config.DOM.navbar.classList.add('js-navbar--scroll');
+		elements.navbar.classList.add(elementStrings.navbarActive);
 	}
 }
 
 export default function navbarScroll() {
 	const actualPosition = window.pageYOffset;
-	const heroEndCheckpoint = config.DOM.hero.offsetHeight - config.DOM.navbar.offsetHeight;
+	const heroEndCheckpoint = elements.hero.offsetHeight - elements.navbar.offsetHeight;
 	// Actual window position + headline distance to top of window + (visual improvment: half of headline height)
-	const headlineDistanceTop = actualPosition + config.DOM.headline.getBoundingClientRect().top + (config.DOM.headline.offsetHeight / 2);
-	const heroBtnDistanceTop = actualPosition + config.DOM.heroBtn.getBoundingClientRect().top;
+	const headlineDistanceTop = actualPosition + elements.headline.getBoundingClientRect().top + (elements.headline.offsetHeight / 2);
+	const heroBtnDistanceTop = actualPosition + elements.heroBtn.getBoundingClientRect().top;
 	const heroBtnFadeStartPosition = heroBtnDistanceTop / 2;
 	refreshHeader(actualPosition, heroEndCheckpoint);
 	const scrollEvents = () => {
@@ -32,10 +32,10 @@ export default function navbarScroll() {
 		refreshHeader(actualPosition, heroEndCheckpoint);
 
 		// Fading Headline
-		actualPosition < headlineDistanceTop ? config.DOM.headline.style.opacity = `${opacityDecrease(actualPosition, headlineDistanceTop)}` : config.DOM.headline.style.opacity = '0';
+		actualPosition < headlineDistanceTop ? elements.headline.style.opacity = `${opacityDecrease(actualPosition, headlineDistanceTop)}` : elements.headline.style.opacity = '0';
 
 		// Fading Call to Action
-		actualPosition < heroBtnDistanceTop ? config.DOM.heroBtn.style.opacity = `${opacityDecrease(actualPosition, heroBtnDistanceTop, heroBtnFadeStartPosition)}` : config.DOM.heroBtn.style.opacity = '0';
+		actualPosition < heroBtnDistanceTop ? elements.heroBtn.style.opacity = `${opacityDecrease(actualPosition, heroBtnDistanceTop, heroBtnFadeStartPosition)}` : elements.heroBtn.style.opacity = '0';
 	};
 
 	window.addEventListener('scroll', throttle(scrollEvents, 10));
