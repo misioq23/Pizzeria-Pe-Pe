@@ -12,4 +12,8 @@ const elementStrings = {
 	navbarActive: 'navbar--scroll',
 };
 
-export { elements, elementStrings };
+const state = {
+	burger: false,
+};
+
+export { elements, elementStrings, state };

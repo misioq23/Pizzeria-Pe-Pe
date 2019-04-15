@@ -1,7 +1,8 @@
 import debounce from 'lodash/debounce';
 import navbarScroll from './scroll';
 import smoothScroll from './smoothScroll';
-import { elements, elementStrings } from './config';
+import { elements, elementStrings, state } from './config';
+import modal from './modal';
 
 document.addEventListener('DOMContentLoaded', () => {
 	navbarScroll();
@@ -15,9 +16,12 @@ window.addEventListener('resize', debounce(() => {
 }, 500));
 
 elements.burger.addEventListener('click', () => {
+	state.burger = !state.burger;
 	elements.navbar.classList.toggle(elementStrings.burgerActive);
-});
+	elements.burger.setAttribute('aria-expanded', state.burger);
 
+});
+// Smooth scroll
 const handleClick = (event) => {
 	event.preventDefault();
 	const targetSection = event.target.dataset.target;
