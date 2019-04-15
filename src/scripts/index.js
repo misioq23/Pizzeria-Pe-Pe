@@ -17,12 +17,11 @@ config.DOM.burger.addEventListener('click', () => {
 
 const handleClick = (event) => {
 	event.preventDefault();
-	const button = event.target;
-	if (button.className === 'nav__link') {
-		const targetSection = button.dataset.target;
+	const targetSection = event.target.dataset.target;
+	if (typeof targetSection !== 'undefined') {
 		const destinationSection = document.querySelector(`.${targetSection}`);
 		smoothScroll(destinationSection);
 	}
 };
 
-config.DOM.navList.addEventListener('click', handleClick);
+config.DOM.navbar.addEventListener('click', handleClick);

@@ -1,7 +1,6 @@
 export default {
 	DOM: {
 		navbar: document.querySelector('.navbar'),
-		navList: document.querySelector('.nav__list'),
 		burger: document.querySelector('.burger'),
 		hero: document.querySelector('.hero'),
 		heroParallax: document.querySelector('.hero__parallax'),
