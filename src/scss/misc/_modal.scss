@@ -1,0 +1,85 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+	outline: 0;
+	@include laptop {
+		padding-right: 17px;
+	}
+	&.modal--show {
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+}
+
+.fade {
+	transition: opacity .15s linear;
+	& .modal__dialog {
+		transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+			transform: translate(0,-25%);
+	}
+}
+.modal--show .modal__dialog {
+	transform: translate(0,0);
+}
+
+.modal__dialog {
+	position: relative;
+    width: auto;
+    margin: .5rem;
+	pointer-events: none;
+	@include tablet {
+		max-width: 50em;
+		margin: 1.75rem auto;
+	}
+}
+.modal__open {
+	overflow: hidden;
+	@include laptop {
+		padding-right: 17px;
+	}
+	.navbar {
+		@include laptop {
+		padding-right: 17px;
+		}
+	}
+	.modal {
+		display: block;
+	}
+}
+
+.modal__content {
+	position: relative;
+    display: flex;
+    flex-direction: column;
+	width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+}
+
+.modal__header {
+	text-align: right;
+}
+
+.modal__close {
+	display: inline-block;
+
+.burger__line {
+	background: $color__secondary;
+}
+}
+
+.modal__body {
+	position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+}

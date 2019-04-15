@@ -19,7 +19,6 @@ elements.burger.addEventListener('click', () => {
 	state.burger = !state.burger;
 	elements.navbar.classList.toggle(elementStrings.burgerActive);
 	elements.burger.setAttribute('aria-expanded', state.burger);
-
 });
 // Smooth scroll
 const handleClick = (event) => {
@@ -32,3 +31,7 @@ const handleClick = (event) => {
 };
 
 elements.navbar.addEventListener('click', handleClick);
+// Modal
+elements.heroBtn.addEventListener('click', modal);
+elements.offerBtn.addEventListener('click', modal);
+elements.modalClose.addEventListener('click', modal);
