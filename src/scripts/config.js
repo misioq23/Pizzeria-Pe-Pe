@@ -8,8 +8,8 @@ const elements = {
 };
 
 const elementStrings = {
-	burgerActive: 'js-navbar__burger--active',
-	navbarActive: 'js-navbar--scroll'
+	burgerActive: 'burger--active',
+	navbarActive: 'navbar--scroll',
 };
 
 export { elements, elementStrings };

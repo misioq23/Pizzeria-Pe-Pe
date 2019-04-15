@@ -26,7 +26,7 @@
 	}
 }
 
-.js-navbar__burger--active .nav {
+.burger--active .nav {
 	visibility: visible;
 	color: $navbar__color--primary;
 	opacity: 1;
@@ -60,8 +60,4 @@
 	&:focus {
 		text-decoration: underline;
 	}
-}
-
-.js-navbar__burger--active .nav__list {
-	display: flex;
 }

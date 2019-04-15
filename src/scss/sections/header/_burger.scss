@@ -16,7 +16,7 @@
     @include burger--static($navbar__height, $navbar__color--primary);
 }
 
-.js-navbar__burger--active .burger__line {
+.burger--active .burger__line {
     transform: rotate(315deg);
 
     &:before {
@@ -28,6 +28,6 @@
     }
 }
 
-.js-navbar--scroll .burger__line {
+.navbar--scroll .burger__line {
     background:  $navbar__color--secondary;
 }
