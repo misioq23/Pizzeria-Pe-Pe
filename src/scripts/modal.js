@@ -18,7 +18,16 @@ function removeFocus() {
 	});
 }
 
+function downloadMenu() {
+	const menuScript = document.createElement('script');
+	menuScript.src = 'https://pe-pe.skubacz.pl/menu_widget.js';
+	document.body.appendChild(menuScript);
+}
+
 export default function modal() {
+	if (!state.menuScript) {
+		downloadMenu();
+	}
 	state.modal = !state.modal;
 	elements.body.classList.toggle(elementStrings.modalOpen);
 	elements.modal.classList.toggle(elementStrings.modalShow);

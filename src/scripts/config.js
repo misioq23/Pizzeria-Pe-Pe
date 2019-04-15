@@ -21,6 +21,7 @@ const elementStrings = {
 
 const state = {
 	modal: false,
+	menuScript: false,
 	burger: false,
 };
 
