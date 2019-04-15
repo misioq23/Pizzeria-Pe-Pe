@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('resize', debounce(() => {
 	navbarScroll();
+	if (elements.navbar.classList.contains(elementStrings.burgerActive)) {
+		elements.navbar.classList.toggle(elementStrings.burgerActive);
+	}
 }, 500));
 
 elements.burger.addEventListener('click', () => {
