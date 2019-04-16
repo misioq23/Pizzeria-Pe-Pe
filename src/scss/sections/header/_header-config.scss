@@ -16,6 +16,6 @@ $scroll--time: .25s;
 $nav-burger--time: .35s;
 $navbar--scroll: background-color $scroll--time ease-in, color $scroll--time ease-in, fill $scroll--time ease-in;
 $burger--active: transform $nav-burger--time linear;
-$nav__mobile--active: opacity $nav-burger--time ease-out;
+$nav__mobile--active: opacity $nav-burger--time ease-out, visibility .35s;
 
 

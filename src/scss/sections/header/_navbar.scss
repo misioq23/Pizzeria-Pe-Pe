@@ -2,13 +2,10 @@
     position: fixed;
     top: 0;
     z-index: 100;
-
 	width: 100%;
-
 	background: $navbar__background--primary;
     color: $navbar__color--primary;
     fill: $navbar__color--primary;
-
 	transition: $navbar--scroll;
 }
 
@@ -17,21 +14,4 @@
 	color: $navbar__color--secondary;
 	fill: $navbar__color--secondary;
 	box-shadow: 0 .01em .3em rgba(0, 0, 0, .8);
-}
-
-.navbar__wrapper {
-	display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-
-    max-width: 85em;
-   	height: $navbar__height;
-	margin: 0 auto;
-	@include laptop {
-		justify-content: space-around;
-	}
-	@include desktop {
-		justify-content: space-between;
-	}
 }

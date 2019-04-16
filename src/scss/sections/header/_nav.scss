@@ -1,44 +1,53 @@
-.nav {
-	// styling burger menu
+.nav{
+	display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 85em;
+   	height: $navbar__height;
+	margin: 0 auto;
+	@include laptop {
+		justify-content: space-around;
+	}
+	@include desktop {
+		justify-content: space-between;
+	}
+}
+
+.nav__list {
+	// styling mobile menu
 	position: absolute;
+	display: flex;
+	flex-direction: column;
 	top: $navbar__height;
 	left: 0;
 	visibility: hidden;
     width: 100vw;
     height: 100vh;
-	
 	background: $nav__background--mobile;
-
 	opacity: 0;
 	will-change: opacity;
-	transition: $nav__mobile--active, visibility 0s .35s;
-
+	transition: $nav__mobile--active;
+	
 	@include laptop {
+		flex-direction: row;
+		flex-basis: auto;
 		position: static;
 		visibility: visible;	
 		width: auto;
 		height: auto;
 		
 		background: none;
-
+		
 		opacity: 1;
 		transition: none;
 	}
 }
-
-.burger--active .nav {
+.burger--active .nav__list {
 	visibility: visible;
 	color: $navbar__color--primary;
 	opacity: 1;
 	transition: $nav__mobile--active;
-}
-
-.nav__list {
-	display: flex;
-	flex-direction: column;
-	@include laptop {
-		flex-direction: row;
-	}
 }
 
 .nav__link {
