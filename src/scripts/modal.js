@@ -27,6 +27,7 @@ function downloadMenu() {
 export default function modal() {
 	if (!state.menuScript) {
 		downloadMenu();
+		state.menuScript = !state.menuScript;
 	}
 	state.modal = !state.modal;
 	elements.body.classList.toggle(elementStrings.modalOpen);
