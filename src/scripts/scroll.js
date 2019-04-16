@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import { getSectionPositions, adressChange } from './functions/adressChange';
 import { elements, elementStrings } from './config';
 
 function opacityDecrease(actualPosition, elementDistanceFromTop, startFadingPosition = 0) {
@@ -19,6 +20,7 @@ function refreshHeader(actualPosition, checkpoint) {
 
 export default function navbarScroll() {
 	const actualPosition = window.pageYOffset;
+	getSectionPositions(actualPosition);
 	const heroEndCheckpoint = elements.hero.offsetHeight - elements.navbar.offsetHeight;
 	// Actual window position + headline distance to top of window + (visual improvment: half of headline height)
 	const headlineDistanceTop = actualPosition + elements.headline.getBoundingClientRect().top + (elements.headline.offsetHeight / 2);
@@ -27,7 +29,7 @@ export default function navbarScroll() {
 	refreshHeader(actualPosition, heroEndCheckpoint);
 	const scrollEvents = () => {
 		const actualPosition = window.pageYOffset;
-
+		adressChange(actualPosition);
 		// Navbar change color & Parallax
 		refreshHeader(actualPosition, heroEndCheckpoint);
 
@@ -38,5 +40,5 @@ export default function navbarScroll() {
 		actualPosition < heroBtnDistanceTop ? elements.heroBtn.style.opacity = `${opacityDecrease(actualPosition, heroBtnDistanceTop, heroBtnFadeStartPosition)}` : elements.heroBtn.style.opacity = '0';
 	};
 
-	window.addEventListener('scroll', throttle(scrollEvents, 10));
+	window.addEventListener('scroll', throttle(scrollEvents, 50));
 }
