@@ -1,8 +1,8 @@
 import debounce from 'lodash/debounce';
 import navbarScroll from './scroll';
 import smoothScroll from './smoothScroll';
-import { elements, elementStrings, state } from './config';
 import modal from './modal';
+import { elements, elementStrings, state } from './config';
 
 document.addEventListener('DOMContentLoaded', () => {
 	navbarScroll();

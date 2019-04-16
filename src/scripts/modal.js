@@ -1,23 +1,5 @@
 import { elements, elementStrings, state } from './config';
-function focusAble(element) {
-	const focusable = element.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-	return Array.prototype.slice.call(focusable);
-}
-
-const allFocus = focusAble(elements.main).concat(focusAble(elements.navbar));
-
-function addFocus() {
-	allFocus.forEach((element) => {
-		element.removeAttribute('tabindex', -1);
-	});
-}
-
-function removeFocus() {
-	allFocus.forEach((element) => {
-		element.setAttribute('tabindex', -1);
-	});
-}
-
+import { addFocus, removeFocus } from './functions/focusTrap';
 function downloadMenu() {
 	const menuScript = document.createElement('script');
 	menuScript.src = 'https://pe-pe.skubacz.pl/menu_widget.js';
