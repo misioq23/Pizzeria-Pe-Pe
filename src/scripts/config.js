@@ -15,7 +15,7 @@ const elements = {
 const elementStrings = {
 	burgerActive: 'burger--active',
 	navbarActive: 'navbar--scroll',
-	modalOpen: 'modal__open',
+	modalOpen: 'modal--open',
 	modalShow: 'modal--show',
 };
 

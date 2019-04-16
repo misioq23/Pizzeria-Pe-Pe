@@ -4,13 +4,16 @@
     right: 0;
     bottom: 0;
 	left: 0;
+	width: 100vw;
+	height: 100vh;
 	background-color: rgba(0,0,0,.9);
     z-index: 1050;
     display: none;
     overflow: hidden;
 	outline: 0;
-	@include laptop {
-		padding-right: 17px;
+	padding: .5rem;
+	@include tablet {
+		padding: 1.75rem;
 	}
 	&.modal--show {
 		overflow-x: hidden;
@@ -18,28 +21,39 @@
 	}
 }
 
-.fade {
-	transition: opacity .15s linear;
-	& .modal__dialog {
-		transition: transform .3s ease-out,-webkit-transform .3s ease-out;
-		transform: translate(0,-25%);
-	}
-}
-.modal--show .modal__dialog {
-	transform: translate(0,0);
-}
-
 .modal__dialog {
 	position: relative;
-    width: auto;
-    margin: .5rem;
-	pointer-events: none;
+	display: flex;
+	flex-direction: column;
+	min-height: 95%;
+	pointer-events: auto;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: .3rem;
 	@include tablet {
 		max-width: $max-width;
-		margin: 1.75rem auto;
+		margin: 0 auto;
 	}
 }
-.modal__open {
+
+.modal__header {
+	text-align: right;
+}
+
+.modal__close {
+	display: inline-block;
+	.burger__line {
+		background: $color__secondary;
+	}
+}
+
+.modal__body {
+	position: relative;
+    flex: 1 1 auto;
+}
+
+.modal--open {
 	overflow: hidden;
 	@include laptop {
 		padding-right: 17px;
@@ -52,35 +66,4 @@
 	.modal {
 		display: block;
 	}
-}
-
-.modal__content {
-	position: relative;
-    display: flex;
-    flex-direction: column;
-	width: 100%;
-    pointer-events: auto;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.2);
-    border-radius: .3rem;
-    outline: 0;
-}
-
-.modal__header {
-	text-align: right;
-}
-
-.modal__close {
-	display: inline-block;
-
-.burger__line {
-	background: $color__secondary;
-}
-}
-
-.modal__body {
-	position: relative;
-    flex: 1 1 auto;
-    padding: 1rem;
 }
