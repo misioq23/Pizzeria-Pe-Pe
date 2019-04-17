@@ -5,9 +5,7 @@ import modal from './modal';
 import { burgerToggle, deactiveBurger } from './modules/burgerToggle';
 import { elements } from './config';
 export default function eventListener() {
-	document.addEventListener('DOMContentLoaded', () => {
-		navbarScroll();
-	});
+	document.addEventListener('DOMContentLoaded', navbarScroll);
 
 	window.addEventListener('resize', debounce(() => {
 		navbarScroll();
