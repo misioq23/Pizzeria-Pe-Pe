@@ -10,10 +10,6 @@ const elements = {
 	offerBtn: document.querySelector('.offer__btn'),
 	modal: document.querySelector('.modal'),
 	modalClose: document.querySelector('.modal__close'),
-	dataAnchors: {
-		names: [],
-		starts: []
-	}
 };
 
 const elementStrings = {

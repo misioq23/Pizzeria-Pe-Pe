@@ -20,7 +20,7 @@ function refreshHeader(actualPosition, checkpoint) {
 
 export default function navbarScroll() {
 	const actualPosition = window.pageYOffset;
-	getSectionPositions(actualPosition);
+	const dataAnchors = getSectionPositions(actualPosition);
 	const heroEndCheckpoint = elements.hero.offsetHeight - elements.navbar.offsetHeight;
 	// Actual window position + headline distance to top of window + (visual improvment: half of headline height)
 	const headlineDistanceTop = actualPosition + elements.headline.getBoundingClientRect().top + (elements.headline.offsetHeight / 2);
@@ -29,7 +29,7 @@ export default function navbarScroll() {
 	refreshHeader(actualPosition, heroEndCheckpoint);
 	const scrollEvents = () => {
 		const actualPosition = window.pageYOffset;
-		adressChange(actualPosition);
+		adressChange(dataAnchors, actualPosition);
 		// Navbar change color & Parallax
 		refreshHeader(actualPosition, heroEndCheckpoint);
 
