@@ -19,9 +19,4 @@ const elementStrings = {
 	modalShow: 'modal--show',
 };
 
-const state = {
-	modal: false,
-	menuScript: false,
-};
-
-export { elements, elementStrings, state };
+export { elements, elementStrings };

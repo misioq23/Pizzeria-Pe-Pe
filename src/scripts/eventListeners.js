@@ -1,7 +1,7 @@
 import debounce from 'lodash/debounce';
 import navbarScroll from './scroll';
 import scrollTo from './modules/scrollTo';
-import modal from './modal';
+import modal from './modules/modal';
 import { burgerToggle, deactiveBurger } from './modules/burgerToggle';
 import { elements } from './config';
 export default function eventListener() {

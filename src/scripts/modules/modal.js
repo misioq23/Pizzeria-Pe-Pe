@@ -1,5 +1,9 @@
-import { elements, elementStrings, state } from './config';
-import { addFocus, removeFocus } from './functions/focusTrap';
+import { elements, elementStrings } from '../config';
+import { addFocus, removeFocus } from '../functions/focusTrap';
+const state = {
+	modalOpen: false,
+	menuScript: false,
+};
 function downloadMenu() {
 	const menuScript = document.createElement('script');
 	menuScript.src = 'https://pe-pe.skubacz.pl/menu_widget.js';
@@ -11,10 +15,10 @@ export default function modal() {
 		downloadMenu();
 		state.menuScript = !state.menuScript;
 	}
-	state.modal = !state.modal;
+	state.modalOpen = !state.modalOpen;
 	elements.body.classList.toggle(elementStrings.modalOpen);
 	elements.modal.classList.toggle(elementStrings.modalShow);
-	if (state.modal) {
+	if (state.modalOpen) {
 		removeFocus();
 		elements.main.setAttribute('aria-hidden', true);
 	} else {
