@@ -18,18 +18,17 @@ function getSectionPositions(actualPosition) {
 	return dataAnchors;
 }
 // Returns '#sectionName'
-function findScrollCheckpoint(data, actualPosition) {
-	const windowPositionAtBottom = Math.floor(elements.body.getBoundingClientRect().height - window.innerHeight);
+function findScrollCheckpoint(data, actualPosition, bottom) {
 	for (const el of data) {
-		if (actualPosition !== windowPositionAtBottom && el.start <= actualPosition && actualPosition < el.end) {
+		if (actualPosition !== bottom && el.start <= actualPosition && actualPosition < el.end) {
 			return el.checkpointName;
 		}
 	}
 	return data[data.length - 1].checkpointName;
 }
 
-function adressChange(data, actualPosition) {
-	const checkpoint = findScrollCheckpoint(data, actualPosition);
+function adressChange(data, actualPosition, bottom) {
+	const checkpoint = findScrollCheckpoint(data, actualPosition, bottom);
 	history.replaceState('state', 'title', checkpoint !== 'index' ? checkpoint : ' ');
 }
 export { getSectionPositions, adressChange };

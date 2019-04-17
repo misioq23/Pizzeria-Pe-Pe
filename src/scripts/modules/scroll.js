@@ -17,10 +17,9 @@ export function refreshHeader(actualPosition, checkpoint) {
 	}
 }
 
-export function scrollEvents(dataAnchors, heroEndCheckpoint, heroBtnDistanceTop, heroBtnFadeStartPosition, headlineDistanceTop) {
+export function scrollEvents(dataAnchors, heroEndCheckpoint, heroBtnDistanceTop, heroBtnFadeStartPosition, headlineDistanceTop, documentBottom) {
 	const actualPosition = window.pageYOffset;
-
-	adressChange(dataAnchors, actualPosition);
+	adressChange(dataAnchors, actualPosition, documentBottom);
 	// Navbar change color & Parallax
 	refreshHeader(actualPosition, heroEndCheckpoint);
 

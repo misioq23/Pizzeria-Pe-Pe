@@ -10,5 +10,6 @@ export function calculatePositions() {
 	positions['headlineDistanceTop'] = startPosition + elements.headline.getBoundingClientRect().top + (elements.headline.offsetHeight / 2);
 	positions['heroBtnDistanceTop'] = startPosition + elements.heroBtn.getBoundingClientRect().top;
 	positions['heroBtnFadeStartPosition'] = positions.heroBtnDistanceTop / 2;
+	positions['documentBottom'] = Math.floor(elements.body.getBoundingClientRect().height - window.innerHeight);
 	return positions;
 }

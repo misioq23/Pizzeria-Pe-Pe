@@ -26,7 +26,7 @@ export default function eventListener() {
 		elements.modalClose.addEventListener('click', modal);
 
 		window.addEventListener('scroll', throttle(() => {
-			scrollEvents(positions.state.mainSections, positions.state.mainSections[0].end, positions.state.heroBtnDistanceTop, positions.state.heroBtnFadeStartPosition, positions.state.headlineDistanceTop);
+			scrollEvents(positions.state.mainSections, positions.state.mainSections[0].end, positions.state.heroBtnDistanceTop, positions.state.heroBtnFadeStartPosition, positions.state.headlineDistanceTop, positions.state.documentBottom);
 		}, 50));
 	});
 }
