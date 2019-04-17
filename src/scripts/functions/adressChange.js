@@ -30,6 +30,6 @@ function findScrollCheckpoint(data, actualPosition) {
 
 function adressChange(data, actualPosition) {
 	const checkpoint = findScrollCheckpoint(data, actualPosition);
-	history.pushState('state', 'title', checkpoint !== 'index' ? checkpoint : ' ');
+	history.replaceState('state', 'title', checkpoint !== 'index' ? checkpoint : ' ');
 }
 export { getSectionPositions, adressChange };
