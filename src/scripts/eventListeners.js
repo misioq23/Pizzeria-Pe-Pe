@@ -2,8 +2,8 @@ import debounce from 'lodash/debounce';
 import navbarScroll from './scroll';
 import scrollTo from './modules/scrollTo';
 import modal from './modal';
-import burgerToggle from './modules/burgerToggle';
-import { elements, elementStrings } from './config';
+import { burgerToggle, deactiveBurger } from './modules/burgerToggle';
+import { elements } from './config';
 export default function eventListener() {
 	document.addEventListener('DOMContentLoaded', () => {
 		navbarScroll();
@@ -11,9 +11,7 @@ export default function eventListener() {
 
 	window.addEventListener('resize', debounce(() => {
 		navbarScroll();
-		if (elements.navbar.classList.contains(elementStrings.burgerActive)) {
-			elements.navbar.classList.toggle(elementStrings.burgerActive);
-		}
+		deactiveBurger();
 	}, 500));
 
 	elements.burger.addEventListener('click', burgerToggle);
