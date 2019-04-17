@@ -5,12 +5,12 @@ function destinationPosition(element, actualPosition) {
 }
 
 function getSectionPositions(actualPosition) {
-	const sections = document.querySelectorAll('[data-anchor]');
+	const sections = document.querySelectorAll('[data-checkpoint]');
 	const sectionsArray = Array.prototype.slice.call(sections);
 	const dataAnchors = [];
 	sectionsArray.forEach((el) => {
 		dataAnchors.push(Object.freeze({
-			name: el.dataset.anchor,
+			checkpointName: el.dataset.checkpoint,
 			start: destinationPosition(el, actualPosition) - elements.navbar.offsetHeight,
 			end: el.getBoundingClientRect().bottom + actualPosition - elements.navbar.offsetHeight,
 		}));
@@ -22,10 +22,10 @@ function findScrollCheckpoint(data, actualPosition) {
 	const windowPositionAtBottom = Math.floor(elements.body.getBoundingClientRect().height - window.innerHeight);
 	for (const el of data) {
 		if (actualPosition !== windowPositionAtBottom && el.start <= actualPosition && actualPosition < el.end) {
-			return el.name;
+			return el.checkpointName;
 		}
 	}
-	return data[data.length - 1].name;
+	return data[data.length - 1].checkpointName;
 }
 
 function adressChange(data, actualPosition) {
