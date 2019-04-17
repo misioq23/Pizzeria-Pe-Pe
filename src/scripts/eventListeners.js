@@ -1,6 +1,6 @@
 import debounce from 'lodash/debounce';
 import navbarScroll from './scroll';
-import smoothScroll from './smoothScroll';
+import scrollTo from './modules/scrollTo';
 import modal from './modal';
 import burgerToggle from './modules/burgerToggle';
 import { elements, elementStrings } from './config';
@@ -16,18 +16,8 @@ export default function eventListener() {
 		}
 	}, 500));
 
-	// Smooth scroll
-	const handleClick = (event) => {
-		event.preventDefault();
-		const targetSection = event.target.dataset.target;
-		if (typeof targetSection !== 'undefined') {
-			const destinationSection = document.querySelector(`.${targetSection}`);
-			smoothScroll(destinationSection);
-		}
-	};
-
 	elements.burger.addEventListener('click', burgerToggle);
-	elements.navbar.addEventListener('click', handleClick);
+	elements.navbar.addEventListener('click', scrollTo);
 
 	// Modal
 	elements.heroBtn.addEventListener('click', modal);
