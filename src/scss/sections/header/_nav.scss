@@ -25,6 +25,7 @@
     width: 100vw;
     height: 100vh;
 	background: $nav__background--mobile;
+	color: $navbar__color--primary;
 	opacity: 0;
 	will-change: opacity;
 	transition: $nav__mobile--active;
@@ -45,7 +46,6 @@
 }
 .burger--active .nav__list {
 	visibility: visible;
-	color: $navbar__color--primary;
 	opacity: 1;
 	transition: $nav__mobile--active;
 }
