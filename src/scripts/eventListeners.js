@@ -2,7 +2,8 @@ import debounce from 'lodash/debounce';
 import navbarScroll from './scroll';
 import smoothScroll from './smoothScroll';
 import modal from './modal';
-import { elements, elementStrings, state } from './config';
+import burgerToggle from './modules/burgerToggle';
+import { elements, elementStrings } from './config';
 export default function eventListener() {
 	document.addEventListener('DOMContentLoaded', () => {
 		navbarScroll();
@@ -23,12 +24,6 @@ export default function eventListener() {
 			const destinationSection = document.querySelector(`.${targetSection}`);
 			smoothScroll(destinationSection);
 		}
-	};
-
-	const burgerToggle = () => {
-		state.burger = !state.burger;
-		elements.navbar.classList.toggle(elementStrings.burgerActive);
-		elements.burger.setAttribute('aria-expanded', state.burger);
 	};
 
 	elements.burger.addEventListener('click', burgerToggle);

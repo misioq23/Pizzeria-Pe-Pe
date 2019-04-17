@@ -22,7 +22,6 @@ const elementStrings = {
 const state = {
 	modal: false,
 	menuScript: false,
-	burger: false,
 };
 
 export { elements, elementStrings, state };
