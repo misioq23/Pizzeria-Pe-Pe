@@ -10,11 +10,13 @@ const elements = {
 	offerBtn: document.querySelector('.offer__btn'),
 	modal: document.querySelector('.modal'),
 	modalClose: document.querySelector('.modal__close'),
+	navLinks: document.querySelectorAll('.nav__link')
 };
 
 const elementStrings = {
 	burgerActive: 'burger--active',
 	navbarActive: 'navbar--scroll',
+	navLinkActive: 'nav__link--active',
 	modalOpen: 'modal--open',
 	modalShow: 'modal--show',
 };

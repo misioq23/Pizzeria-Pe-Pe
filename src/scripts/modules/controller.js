@@ -1,6 +1,7 @@
 import { getSectionPositions, findScrollCheckpoint, addressChange } from '../functions/addressChange';
 import { parallax, opacityPrint } from '../functions/hero';
 import { navbarColor } from '../functions/navbar';
+import { scrollSpy } from '../functions/scrollSpy';
 import { elements } from '../config';
 
 const controller = () => {
@@ -33,6 +34,7 @@ const controller = () => {
 			data.addressState.actual = findScrollCheckpoint(data.sections, actualPosition, data.elements.documentTopHeight);
 			if (data.addressState.previous !== data.addressState.actual) {
 				data.addressState.previous = data.addressState.actual;
+				scrollSpy.spy(data.addressState.actual);
 				addressChange(data.addressState.actual);
 			}
 			data.navbarState.actual = actualPosition > data.sections[0].end ? true : false;
