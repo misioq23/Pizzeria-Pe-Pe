@@ -1,34 +1,30 @@
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
-import { scrollEvents, refreshHeader } from './modules/scroll';
-import scrollTo from './modules/scrollTo';
-import modal from './modules/modal';
 import burger from './modules/burger';
+import scrollTo from './modules/scrollTo';
+import controller from './modules/controller';
+import modal from './modules/modal';
 import { elements } from './config';
-import { calculatePositions } from './base';
 
 export default function eventListener() {
 	document.addEventListener('DOMContentLoaded', () => {
-		const positions = {};
-		positions['state'] = calculatePositions();
-
-		window.addEventListener('resize', debounce(() => {
-			positions['state'] = calculatePositions();
-			// window.pageYOffset not positions.state.actualPosition because it doesn't refresh positions
-			refreshHeader(window.pageYOffset, positions.state.mainSections[0].end);
-			burger.deactivate();
-		}, 500));
-
-		elements.burger.addEventListener('click', burger.toggle);
+		const scroll = controller();
+		scroll.calculatePositions();
 		elements.navbar.addEventListener('click', scrollTo);
-
+		elements.burger.addEventListener('click', burger.toggle);
 		// Modal
 		elements.heroBtn.addEventListener('click', modal);
 		elements.offerBtn.addEventListener('click', modal);
 		elements.modalClose.addEventListener('click', modal);
 
+		window.addEventListener('resize', debounce(() => {
+			scroll.calculatePositions();
+			burger.deactivate();
+			// navbar and parallax update needed
+		}, 500));
+
 		window.addEventListener('scroll', throttle(() => {
-			scrollEvents(positions.state.mainSections, positions.state.mainSections[0].end, positions.state.heroBtnDistanceTop, positions.state.heroBtnFadeStartPosition, positions.state.headlineDistanceTop, positions.state.documentBottom);
-		}, 50));
+			scroll.scroll();
+		}, 10));
 	});
 }

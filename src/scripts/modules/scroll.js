@@ -1,4 +1,3 @@
-import { adressChange } from '../functions/adressChange';
 import { elements, elementStrings } from '../config';
 
 function opacityDecrease(actualPosition, elementDistanceFromTop, startFadingPosition = 0) {
