@@ -11,7 +11,7 @@ export function refreshHeader(actualPosition, checkpoint) {
 	if (actualPosition < checkpoint) {
 		elements.navbar.classList.remove(elementStrings.navbarActive);
 		// Parallax
-		elements.heroParallax.style.transform = `translateY(-${(actualPosition / 3).toFixed()}px)`;
+		elements.heroParallax.style.transform = `translateY(-${Math.round(actualPosition / 3)}px)`;
 	} else {
 		elements.navbar.classList.add(elementStrings.navbarActive);
 	}
