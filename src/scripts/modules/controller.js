@@ -1,27 +1,10 @@
 import { getSectionPositions, findScrollCheckpoint, addressChange } from '../functions/addressChange';
-import { elements, elementStrings } from '../config';
+import { parallax, opacityPrint } from '../functions/hero';
+import { navbarColor } from '../functions/navbar';
+import { elements } from '../config';
 
 const controller = () => {
 	const data = {};
-
-	function navbarColor(navbarState) {
-		navbarState ? elements.navbar.classList.add(elementStrings.navbarActive) : elements.navbar.classList.remove(elementStrings.navbarActive);
-	}
-
-	function opacityDecrease(actualPosition, elementDistanceFromTop, startFadingPosition = 0) {
-		const opacity = (1 - ((actualPosition - startFadingPosition) / (elementDistanceFromTop - startFadingPosition))).toFixed(2);
-		// prevent e.g. opacity = 1.05;
-		return Math.min(1, opacity);
-	}
-
-	function opacityPrint(actualPosition, elementDistanceFromTop, startFadingPosition = 0) {
-		return actualPosition < elementDistanceFromTop ? `${opacityDecrease(actualPosition, elementDistanceFromTop, startFadingPosition)}` : '0';
-	}
-
-	function parallax(actualPosition) {
-		// Parallax
-		elements.heroParallax.style.transform = `translateY(-${Math.round(actualPosition / 3)}px)`;
-	}
 
 	return {
 		calculatePositions() {

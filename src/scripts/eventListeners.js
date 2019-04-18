@@ -8,8 +8,10 @@ import { elements } from './config';
 
 export default function eventListener() {
 	document.addEventListener('DOMContentLoaded', () => {
+		// Scroll init
 		const scroll = controller();
 		scroll.calculatePositions();
+		// Navbar Click
 		elements.navbar.addEventListener('click', scrollTo);
 		elements.burger.addEventListener('click', burger.toggle);
 		// Modal
