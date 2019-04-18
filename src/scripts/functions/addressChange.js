@@ -20,7 +20,7 @@ function getSectionPositions(actualPosition) {
 // Returns '#sectionName'
 function findScrollCheckpoint(data, actualPosition, documentBottom) {
 	for (const el of data) {
-		if (actualPosition !== documentBottom && el.start <= actualPosition && actualPosition < el.end) {
+		if (actualPosition < documentBottom && el.start <= actualPosition && actualPosition < el.end) {
 			return el.checkpointName;
 		}
 	}
