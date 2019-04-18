@@ -19,8 +19,8 @@ export default function eventListener() {
 
 		window.addEventListener('resize', debounce(() => {
 			scroll.calculatePositions();
-			burger.deactivate();
 			// navbar and parallax update needed
+			burger.deactivate();
 		}, 500));
 
 		window.addEventListener('scroll', throttle(() => {
