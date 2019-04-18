@@ -23,6 +23,8 @@ const controller = () => {
 			data.addressState = {
 				actual: window.location.hash
 			};
+			// Updating parallax position
+			parallax(data.startPos);
 		},
 		scroll() {
 			// 1. Actual Position

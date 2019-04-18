@@ -21,12 +21,12 @@ export default function eventListener() {
 
 		window.addEventListener('resize', debounce(() => {
 			scroll.calculatePositions();
-			// navbar and parallax update needed
+			// navbar color update needed
 			burger.deactivate();
 		}, 500));
 
 		window.addEventListener('scroll', throttle(() => {
 			scroll.scroll();
-		}, 10));
+		}, 20));
 	});
 }
