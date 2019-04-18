@@ -3,9 +3,10 @@ import throttle from 'lodash/throttle';
 import { scrollEvents, refreshHeader } from './modules/scroll';
 import scrollTo from './modules/scrollTo';
 import modal from './modules/modal';
-import { burgerToggle, deactiveBurger } from './modules/burgerToggle';
+import burger from './modules/burger';
 import { elements } from './config';
 import { calculatePositions } from './base';
+
 export default function eventListener() {
 	document.addEventListener('DOMContentLoaded', () => {
 		const positions = {};
@@ -13,11 +14,12 @@ export default function eventListener() {
 
 		window.addEventListener('resize', debounce(() => {
 			positions['state'] = calculatePositions();
-			refreshHeader(positions.state.actualPosition, positions.state.mainSections[0].end);
-			deactiveBurger();
+			// window.pageYOffset not positions.state.actualPosition because it doesn't refresh positions
+			refreshHeader(window.pageYOffset, positions.state.mainSections[0].end);
+			burger.deactivate();
 		}, 500));
 
-		elements.burger.addEventListener('click', burgerToggle);
+		elements.burger.addEventListener('click', burger.toggle);
 		elements.navbar.addEventListener('click', scrollTo);
 
 		// Modal
