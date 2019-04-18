@@ -30,11 +30,13 @@ const controller = () => {
 		scroll() {
 			// 1. Actual Position
 			const actualPosition = window.pageYOffset;
-			// 2. Change location address
+			// Data address for window.location and scrollSpy
 			data.addressState.actual = findScrollCheckpoint(data.sections, actualPosition, data.elements.documentTopHeight);
 			if (data.addressState.previous !== data.addressState.actual) {
 				data.addressState.previous = data.addressState.actual;
+				// 2.a Scroll Spy
 				scrollSpy.spy(data.addressState.actual);
+				// 2.b Change location address
 				addressChange(data.addressState.actual);
 			}
 			data.navbarState.actual = actualPosition > data.sections[0].end ? true : false;
