@@ -4,18 +4,26 @@ function focusAble(element) {
 	return Array.prototype.slice.call(focusable);
 }
 
-const allFocus = focusAble(elements.main).concat(focusAble(elements.navbar));
+function focusTrap() {
+	const navbarFocus = focusAble(elements.navbar);
+	const mainFocus = focusAble(elements.main);
+	const allFocus = navbarFocus.concat(mainFocus);
+	return {
+		add(array) {
+			array === 'dialog' ? array = allFocus : array = mainFocus;
+			console.log('hej');
+			array.forEach((element) => {
+				element.removeAttribute('tabindex', -1);
+			});
+		},
 
-function addFocus() {
-	allFocus.forEach((element) => {
-		element.removeAttribute('tabindex', -1);
-	});
+		remove(array) {
+			array === 'dialog' ? array = allFocus : array = mainFocus;
+			array.forEach((element) => {
+				element.setAttribute('tabindex', -1);
+			});
+		}
+	};
 }
 
-function removeFocus() {
-	allFocus.forEach((element) => {
-		element.setAttribute('tabindex', -1);
-	});
-}
-
-export { addFocus, removeFocus };
+export const trap = focusTrap();
