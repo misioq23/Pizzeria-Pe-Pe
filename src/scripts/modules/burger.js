@@ -1,4 +1,4 @@
-import { trap } from '../functions/focusTrap';
+import { focusTrap } from '../functions/focusTrap';
 import { elements, elementStrings } from '../config';
 
 const burger = (function() {
@@ -9,7 +9,7 @@ const burger = (function() {
 
 	const trapToggle = () => {
 		data.trap = !data.trap;
-		data.trap ? trap.remove('') : trap.add('');
+		data.trap ? focusTrap.add('') : focusTrap.remove('');
 	};
 	const ariaExpanded = () => {
 		data.navOpen = !data.navOpen;

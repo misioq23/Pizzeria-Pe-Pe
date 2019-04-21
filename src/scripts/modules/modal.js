@@ -1,5 +1,5 @@
 import { elements, elementStrings } from '../config';
-import { trap } from '../functions/focusTrap';
+import { focusTrap } from '../functions/focusTrap';
 const state = {
 	modalOpen: false,
 	menuScript: false,
@@ -19,10 +19,10 @@ export default function modal() {
 	elements.body.classList.toggle(elementStrings.modalOpen);
 	elements.modal.classList.toggle(elementStrings.modalShow);
 	if (state.modalOpen) {
-		trap.remove('dialog');
-		elements.main.setAttribute('aria-hidden', true);
-	} else {
-		trap.add('dialog');
+		focusTrap.add('dialog');
 		elements.main.removeAttribute('aria-hidden', true);
+	} else {
+		focusTrap.remove('dialog');
+		elements.main.setAttribute('aria-hidden', true);
 	}
 }
