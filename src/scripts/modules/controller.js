@@ -39,6 +39,7 @@ const controller = () => {
 				// 2.b Change location address
 				addressChange(data.addressState.actual);
 			}
+			// Check navbar position
 			data.navbarState.actual = actualPosition > data.sections[0].end ? true : false;
 			// 3. Navbar change color
 			if (data.navbarState.actual !== data.navbarState.previous) {
@@ -53,9 +54,6 @@ const controller = () => {
 				// 6. Fading Call to Action
 				elements.heroBtn.style.opacity = opacityPrint(actualPosition, data.elements.heroBtnDistanceTop, data.elements.heroBtnFadeStartPosition);
 			}
-		},
-		printData() {
-			return data;
 		}
 	};
 };
