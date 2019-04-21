@@ -1,34 +1,38 @@
 import { trap } from '../functions/focusTrap';
 import { elements, elementStrings } from '../config';
 
-const burgerFactory = () => {
+const burger = (function() {
 	const data = {
 		navOpen: false,
 		trap: false
 	};
-	function trapToggle() {
-		data.trap ? trap.add('') : trap.remove('');
+
+	const trapToggle = () => {
 		data.trap = !data.trap;
-	}
+		data.trap ? trap.remove('') : trap.add('');
+	};
+	const ariaExpanded = () => {
+		data.navOpen = !data.navOpen;
+		elements.burger.setAttribute('aria-expanded', data.navOpen);
+	};
+	const burgerToggle = () => {
+		trapToggle();
+		ariaExpanded();
+		elements.navbar.classList.toggle(elementStrings.burgerActive);
+	};
+
 	return {
 		toggle() {
-			data.navOpen = !data.navOpen;
-			trapToggle();
-			elements.navbar.classList.toggle(elementStrings.burgerActive);
-			elements.burger.setAttribute('aria-expanded', data.navOpen);
+			burgerToggle();
 		},
 		// e.g. deactivate menu on resize event
 		deactivate() {
 			if (data.navOpen) {
-				trapToggle();
-				elements.navbar.classList.toggle(elementStrings.burgerActive);
-				data.navOpen = !data.navOpen;
+				burgerToggle();
 			}
 		}
 	};
-};
-
-const burger = burgerFactory();
+}());
 
 export default burger;
 
