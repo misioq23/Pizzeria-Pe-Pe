@@ -3,7 +3,7 @@ import throttle from 'lodash/throttle';
 import burger from './modules/burger';
 import scrollTo from './modules/scrollTo';
 import controller from './modules/controller';
-import modal from './modules/modal';
+import { modal } from './modules/modal';
 import { elements } from './config';
 
 export default function eventListener() {
@@ -15,9 +15,9 @@ export default function eventListener() {
 		elements.navbar.addEventListener('click', scrollTo);
 		elements.burger.addEventListener('click', burger.toggle);
 		// Modal
-		elements.heroBtn.addEventListener('click', modal);
-		elements.offerBtn.addEventListener('click', modal);
-		elements.modalClose.addEventListener('click', modal);
+		elements.heroBtn.addEventListener('click', modal.open);
+		elements.offerBtn.addEventListener('click', modal.open);
+		elements.modalClose.addEventListener('click', modal.close);
 
 		window.addEventListener('resize', debounce(() => {
 			scroll.calculatePositions();
