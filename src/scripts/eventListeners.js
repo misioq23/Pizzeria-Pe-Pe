@@ -2,7 +2,7 @@ import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import burger from './navControll/burger';
 import navControll from './navControll';
-import modal from './modules/modal';
+import modal from './modal';
 import sections from './sections';
 import scroll from './scrollControll';
 import { elements } from './config';
