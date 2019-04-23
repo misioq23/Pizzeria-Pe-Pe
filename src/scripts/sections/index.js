@@ -1,6 +1,7 @@
 import { elements } from '../config';
 import { addressChange } from './addressChange';
 import { scrollSpy } from './scrollSpy';
+
 export default (function(elementsList) {
 	const data = {
 		sectionsArray: Array.prototype.slice.call(elementsList),
@@ -25,14 +26,15 @@ export default (function(elementsList) {
 
 	return {
 		calcSectionsPosition(actualPosition) {
+			const navbarHeight = elements.navbar.offsetHeight;
 			// Top of window postion at the end of document
 			data.documentTopHeight = Math.floor(elements.body.getBoundingClientRect().height - window.innerHeight);
 			// Array of checkpoint objects
 			data.checkpoints = data.sectionsArray.map((el) => {
 				return {
 					name: el.dataset.checkpoint,
-					start: el.getBoundingClientRect().top + actualPosition - elements.navbar.offsetHeight,
-					end: el.getBoundingClientRect().bottom + actualPosition - elements.navbar.offsetHeight,
+					start: el.getBoundingClientRect().top + actualPosition - navbarHeight,
+					end: el.getBoundingClientRect().bottom + actualPosition - navbarHeight,
 				};
 			});
 
