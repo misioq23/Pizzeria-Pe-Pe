@@ -2,6 +2,7 @@ import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import burger from './modules/burger';
 import scrollTo from './modules/scrollTo';
+import sections from './sections';
 import controller from './modules/controller';
 import { modal } from './modules/modal';
 import { elements } from './config';
@@ -28,5 +29,9 @@ export default function eventListener() {
 		window.addEventListener('scroll', throttle(() => {
 			scroll.scroll();
 		}, 20));
+		window.addEventListener('scroll', debounce(() => {
+			// Data address for window.location and scrollSpy
+			sections.checkSectionPosition(window.pageYOffset);
+		}, 80));
 	});
 }

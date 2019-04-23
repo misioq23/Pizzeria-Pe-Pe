@@ -30,8 +30,6 @@ const controller = () => {
 		scroll() {
 			// 1. Actual Position
 			const actualPosition = window.pageYOffset;
-			// Data address for window.location and scrollSpy
-			sections.checkSectionPosition(actualPosition);
 			// Check navbar position
 			data.navbarState.actual = actualPosition > data.elements.heroSection ? true : false;
 			// 3. Navbar change color
