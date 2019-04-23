@@ -2,9 +2,9 @@ import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 import burger from './modules/burger';
 import scrollTo from './modules/scrollTo';
+import modal from './modules/modal';
 import sections from './sections';
 import scroll from './scrollControll';
-import { modal } from './modules/modal';
 import { elements } from './config';
 
 export default function eventListener() {

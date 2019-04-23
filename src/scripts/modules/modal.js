@@ -1,7 +1,7 @@
 import { elements, elementStrings } from '../config';
 import { focusTrap } from '../functions/focusTrap';
 
-export const modal = (function() {
+export default (function() {
 	const data = {
 		modalOpen: false,
 		menuScript: false,
