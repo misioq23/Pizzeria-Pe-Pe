@@ -1,4 +1,5 @@
-import { parallax, opacityPrint } from '../functions/hero';
+import parallax from './parallax';
+import opacityPrint from './opacity';
 import { navbarColor } from './navbar';
 
 import { elements } from '../config';
