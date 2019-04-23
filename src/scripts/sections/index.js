@@ -17,11 +17,14 @@ export default (function(elementsList) {
 	}
 
 	function updateLayout() {
-		data.previousCheckpoint = data.actualCheckpoint;
 		// Scroll Spy
 		scrollSpy.spy(data.actualCheckpoint);
-		// Change location address
-		addressChange(data.actualCheckpoint);
+		// if undefined address opened for first time open correctly
+		if (data.previousCheckpoint !== undefined) {
+			// Change location address
+			addressChange(data.actualCheckpoint);
+		}
+		data.previousCheckpoint = data.actualCheckpoint;
 	}
 
 	return {
