@@ -1,4 +1,4 @@
-import sections from './sections';
+import sections from '../sections';
 import { parallax, opacityPrint } from '../functions/hero';
 import { navbarColor } from '../functions/navbar';
 

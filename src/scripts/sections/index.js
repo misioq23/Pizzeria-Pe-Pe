@@ -1,6 +1,6 @@
 import { elements } from '../config';
-import { addressChange } from '../functions/addressChange';
-import { scrollSpy } from '../functions/scrollSpy';
+import { addressChange } from './addressChange';
+import { scrollSpy } from './scrollSpy';
 export default (function(elementsList) {
 	const data = {
 		sectionsArray: Array.prototype.slice.call(elementsList),
