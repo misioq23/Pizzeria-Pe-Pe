@@ -1,4 +1,4 @@
-import smoothScroll from '../functions/smoothScroll';
+import smoothScroll from './smoothScroll';
 import burger from './burger';
 function scrollTo(event) {
 	event.preventDefault();
@@ -6,6 +6,7 @@ function scrollTo(event) {
 	if (typeof targetSection !== 'undefined') {
 		const destinationSection = document.querySelector(`.${targetSection}`);
 		smoothScroll(destinationSection);
+		// for mobile disappear
 		burger.deactivate();
 	}
 };

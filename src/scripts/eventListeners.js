@@ -1,7 +1,7 @@
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
-import burger from './modules/burger';
-import scrollTo from './modules/scrollTo';
+import burger from './navControll/burger';
+import navControll from './navControll';
 import modal from './modules/modal';
 import sections from './sections';
 import scroll from './scrollControll';
@@ -9,12 +9,12 @@ import { elements } from './config';
 
 export default function eventListener() {
 	document.addEventListener('DOMContentLoaded', () => {
-		// Scroll init
+		// Scroll & section init
 		const actualPos = window.pageYOffset;
 		scroll.calculatePositions(actualPos);
 		sections.calcSectionsPosition(actualPos, elements.sectionCheckpointsArray);
 		// Navbar Click
-		elements.navbar.addEventListener('click', scrollTo);
+		elements.navbar.addEventListener('click', navControll);
 		elements.burger.addEventListener('click', burger.toggle);
 		// Modal
 		elements.heroBtn.addEventListener('click', modal.open);
