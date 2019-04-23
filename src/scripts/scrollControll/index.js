@@ -1,37 +1,37 @@
-import sections from '../sections';
 import { parallax, opacityPrint } from '../functions/hero';
-import { navbarColor } from '../functions/navbar';
+import { navbarColor } from './navbar';
 
 import { elements } from '../config';
 
-const controller = () => {
+export default (function() {
 	const data = {};
-
+	function navbarColorCheckpoint(actualPosition) {
+		return actualPosition > data.elements.heroSection ? true : false;
+	}
 	return {
-		calculatePositions() {
-			data.startPos = window.pageYOffset;
+		calculatePositions(startPos) {
 			data.elements = {
-				headlineDistanceTop: Math.floor(data.startPos + elements.headline.getBoundingClientRect().top + (elements.headline.offsetHeight / 2)),
-				heroBtnDistanceTop: Math.floor(data.startPos + elements.heroBtn.getBoundingClientRect().top),
-				heroSection: elements.hero.getBoundingClientRect().bottom + data.startPos - elements.navbar.offsetHeight,
+				headlineDistanceTop: Math.floor(startPos + elements.headline.getBoundingClientRect().top + (elements.headline.offsetHeight / 2)),
+				heroBtnDistanceTop: Math.floor(startPos + elements.heroBtn.getBoundingClientRect().top),
+				heroSection: elements.hero.getBoundingClientRect().bottom + startPos - elements.navbar.offsetHeight,
 			};
 			data.elements.heroBtnFadeStartPosition = Math.floor(data.elements.heroBtnDistanceTop / 2);
+
 			data.navbarState = {
-				actual: data.startPos > data.elements.heroSection ? 'true' : 'false'
+				actual: navbarColorCheckpoint(startPos)
 			};
 			data.navbarState.previous = data.navbarState.actual;
-			data.addressState = {
-				actual: window.location.hash
-			};
+
 			// Updating parallax position
-			parallax(data.startPos);
-			sections.calcSectionsPosition(data.startPos, elements.sectionCheckpointsArray);
+			navbarColor(data.navbarState.actual);
+			parallax(startPos);
+
 		},
 		scroll() {
 			// 1. Actual Position
 			const actualPosition = window.pageYOffset;
 			// Check navbar position
-			data.navbarState.actual = actualPosition > data.elements.heroSection ? true : false;
+			data.navbarState.actual = navbarColorCheckpoint(actualPosition);
 			// 3. Navbar change color
 			if (data.navbarState.actual !== data.navbarState.previous) {
 				navbarColor(data.navbarState.actual);
@@ -47,5 +47,4 @@ const controller = () => {
 			}
 		}
 	};
-};
-export default controller;
+}());

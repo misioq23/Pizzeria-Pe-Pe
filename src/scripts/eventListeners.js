@@ -3,15 +3,16 @@ import throttle from 'lodash/throttle';
 import burger from './modules/burger';
 import scrollTo from './modules/scrollTo';
 import sections from './sections';
-import controller from './modules/controller';
+import scroll from './scrollControll';
 import { modal } from './modules/modal';
 import { elements } from './config';
 
 export default function eventListener() {
 	document.addEventListener('DOMContentLoaded', () => {
 		// Scroll init
-		const scroll = controller();
-		scroll.calculatePositions();
+		const actualPos = window.pageYOffset;
+		scroll.calculatePositions(actualPos);
+		sections.calcSectionsPosition(actualPos, elements.sectionCheckpointsArray);
 		// Navbar Click
 		elements.navbar.addEventListener('click', scrollTo);
 		elements.burger.addEventListener('click', burger.toggle);
@@ -21,10 +22,12 @@ export default function eventListener() {
 		elements.modalClose.addEventListener('click', modal.close);
 
 		window.addEventListener('resize', debounce(() => {
-			scroll.calculatePositions();
+			const actualPos = window.pageYOffset;
+			scroll.calculatePositions(actualPos);
+			sections.calcSectionsPosition(actualPos, elements.sectionCheckpointsArray);
 			// navbar color update needed
 			burger.deactivate();
-		}, 500));
+		}, 200));
 
 		window.addEventListener('scroll', throttle(() => {
 			scroll.scroll();
