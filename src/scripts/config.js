@@ -10,7 +10,8 @@ const elements = {
 	offerBtn: document.querySelector('.offer__btn'),
 	modal: document.querySelector('.modal'),
 	modalClose: document.querySelector('.modal__close'),
-	navLinks: document.querySelectorAll('.nav__link')
+	navLinks: document.querySelectorAll('.nav__link'),
+	sectionCheckpoints: document.querySelectorAll('[data-checkpoint]'),
 };
 
 const elementStrings = {

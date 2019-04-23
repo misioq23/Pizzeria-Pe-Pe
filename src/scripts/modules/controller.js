@@ -1,7 +1,7 @@
-import { getSectionPositions, findScrollCheckpoint, addressChange } from '../functions/addressChange';
+import sections from './sections';
 import { parallax, opacityPrint } from '../functions/hero';
 import { navbarColor } from '../functions/navbar';
-import { scrollSpy } from '../functions/scrollSpy';
+
 import { elements } from '../config';
 
 const controller = () => {
@@ -10,15 +10,14 @@ const controller = () => {
 	return {
 		calculatePositions() {
 			data.startPos = window.pageYOffset;
-			data.sections = getSectionPositions(data.startPos);
 			data.elements = {
 				headlineDistanceTop: Math.floor(data.startPos + elements.headline.getBoundingClientRect().top + (elements.headline.offsetHeight / 2)),
 				heroBtnDistanceTop: Math.floor(data.startPos + elements.heroBtn.getBoundingClientRect().top),
-				documentTopHeight: Math.floor(elements.body.getBoundingClientRect().height - window.innerHeight),
+				heroSection: elements.hero.getBoundingClientRect().bottom + data.startPos - elements.navbar.offsetHeight,
 			};
 			data.elements.heroBtnFadeStartPosition = Math.floor(data.elements.heroBtnDistanceTop / 2);
 			data.navbarState = {
-				actual: data.startPos > data.sections[0].end ? 'true' : 'false'
+				actual: data.startPos > data.elements.heroSection ? 'true' : 'false'
 			};
 			data.navbarState.previous = data.navbarState.actual;
 			data.addressState = {
@@ -26,21 +25,15 @@ const controller = () => {
 			};
 			// Updating parallax position
 			parallax(data.startPos);
+			sections.calcSectionsPosition(data.startPos, elements.sectionCheckpointsArray);
 		},
 		scroll() {
 			// 1. Actual Position
 			const actualPosition = window.pageYOffset;
 			// Data address for window.location and scrollSpy
-			data.addressState.actual = findScrollCheckpoint(data.sections, actualPosition, data.elements.documentTopHeight);
-			if (data.addressState.previous !== data.addressState.actual) {
-				data.addressState.previous = data.addressState.actual;
-				// 2.a Scroll Spy
-				scrollSpy.spy(data.addressState.actual);
-				// 2.b Change location address
-				addressChange(data.addressState.actual);
-			}
+			sections.checkSectionPosition(actualPosition);
 			// Check navbar position
-			data.navbarState.actual = actualPosition > data.sections[0].end ? true : false;
+			data.navbarState.actual = actualPosition > data.elements.heroSection ? true : false;
 			// 3. Navbar change color
 			if (data.navbarState.actual !== data.navbarState.previous) {
 				navbarColor(data.navbarState.actual);
