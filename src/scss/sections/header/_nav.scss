@@ -51,6 +51,7 @@
 }
 
 .nav__link {
+	position: relative;
 	display: inline-block;
 
     width: 100%;
@@ -63,14 +64,27 @@
     text-transform: uppercase;
 
     cursor: pointer;
-
-    &:active,
-	&:hover,
-	&:focus {
-		text-decoration: underline;
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: .75em;
+		
+		width: 70%;
+		margin: 0 auto;
+	}
+    &:active::after,
+	&:hover::after,
+	&:focus::after {
+		border-width: 0 0 .05em;
+		border-style: solid;
 	}
 }
 
 .nav__link--active {
-	text-decoration: underline;
+	&::after {
+		border-width: 0 0 .05em;
+		border-style: solid;
+	}
 }
