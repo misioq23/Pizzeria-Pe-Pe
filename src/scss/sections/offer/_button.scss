@@ -1,32 +1,54 @@
 .offer__btn {
-    position: relative; //border inside
+    position: relative;
 	align-self: center;
     padding: 1em 1.5em;
-    border: .125em solid $secondary__offer;
-
+    border: .2em solid $secondary__offer;
+	z-index: 3;
     background: $secondary__offer;
     color: $primary__offer;
     fill: $primary__offer;
 
+	overflow: hidden;
+	
 	font-size: 1.25em;
-    font-weight: 700;
-
-    &:hover,
-    &:active,
-    &:focus {
-        color: $primary__offer;
-    }
-
-    //making border inside
+	font-weight: 700;
+	transition: color .8s ease-out, fill .8s ease-out;
+	
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+	}
+    // making border inside
     &::before {
-        $border__thick: .1em;
-        content: '';
-        position: absolute;
+		$border__thick: 0;
         top: $border__thick;
         left: $border__thick;
         right: $border__thick;
         bottom: $border__thick;
         border-radius: .7em;
-        border: .125em solid $primary__offer;
-    }
+        border: .2em solid $primary__offer;
+	}
+	// making animation on hover
+	$width: 20em;
+	
+	&::after{
+		z-index: -1;
+		top: -$width/1.15;
+		left: -$width/1.18;
+		width: $width*2;
+		height: $width*2;
+		border-radius: 50%;
+		transition: box-shadow .8s ease-out;
+	}
+	
+	&:hover,
+	&:focus{
+		color: $secondary__offer;
+		fill: $secondary__offer;
+		&::after{
+			box-shadow: inset 0 0 0 $width rgba($primary__offer,1);
+		}
+  	}
 }
+
