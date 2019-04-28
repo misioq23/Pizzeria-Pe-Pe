@@ -7,17 +7,23 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: rgba(0,0,0,.9);
-    z-index: 1050;
-    display: none;
+	z-index: 1050;
+	display: block;
+	visibility: hidden;
+	opacity: 0;
     overflow: hidden;
 	outline: 0;
 	padding: .5rem;
+	border: none;
+	transition: opacity .35s ease-out, visibility .35s;
 	@include tablet {
 		padding: 1.75rem;
 	}
 	&.modal--show {
 		overflow-x: hidden;
 		overflow-y: auto;
+		visibility: visible;
+		opacity: 1;
 	}
 }
 
@@ -62,8 +68,5 @@
 		@include laptop {
 		padding-right: 17px;
 		}
-	}
-	.modal {
-		display: block;
 	}
 }
