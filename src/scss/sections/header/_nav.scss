@@ -47,7 +47,6 @@
 .burger--active .nav__list {
 	visibility: visible;
 	opacity: 1;
-	transition: $nav__mobile--active;
 }
 
 .nav__link {
