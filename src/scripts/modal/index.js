@@ -18,17 +18,43 @@ export default (function() {
 		elements.modal.classList.toggle(elementStrings.modalShow);
 		elements.main.setAttribute('aria-hidden', data.modalOpen);
 	}
-	return {
-		open() {
-			if (!data.menuScript) {
-				downloadMenu();
-			}
-			modalToggle();
-			focusTrap.add('dialog');
-		},
-		close() {
-			modalToggle();
-			focusTrap.remove('dialog');
+	function keyPressClose(event) {
+		// escape button
+		if (event.keyCode === 27) {
+			// eslint-disable-next-line no-use-before-define
+			close();
 		}
+	}
+
+	function clickOutside(event) {
+		const targetSection = event.target.closest('.modal__dialog');
+		if (!targetSection) {
+			// eslint-disable-next-line no-use-before-define
+			close();
+		}
+	}
+
+	function open() {
+		if (!data.menuScript) {
+			downloadMenu();
+		}
+		modalToggle();
+		focusTrap.add('dialog');
+
+		window.addEventListener('keydown', keyPressClose);
+		elements.modal.addEventListener('click', clickOutside);
+	}
+
+	function close() {
+		modalToggle();
+		focusTrap.remove('dialog');
+
+		window.removeEventListener('keydown', keyPressClose);
+		elements.modal.removeEventListener('click', clickOutside);
+	}
+
+	return {
+		open,
+		close
 	};
 }());
