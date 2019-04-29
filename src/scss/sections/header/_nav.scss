@@ -62,7 +62,17 @@
     text-align: center;
     text-transform: uppercase;
 
-    cursor: pointer;
+	cursor: pointer;
+	&:active,
+	&:hover,
+	&:focus {
+		background: $navbar__color--primary;
+		color: $navbar__color--secondary;
+		@include laptop {
+			background: transparent;
+			color: inherit;
+		}
+	}
 	&::after {
 		content: '';
 		position: absolute;
@@ -76,14 +86,18 @@
     &:active::after,
 	&:hover::after,
 	&:focus::after {
-		border-width: 0 0 .05em;
-		border-style: solid;
+		@include laptop {
+			border-width: 0 0 .05em;
+			border-style: solid;
+		}
 	}
 }
 
 .nav__link--active {
 	&::after {
-		border-width: 0 0 .05em;
-		border-style: solid;
+		@include laptop {
+			border-width: 0 0 .05em;
+			border-style: solid;
+		}
 	}
 }
