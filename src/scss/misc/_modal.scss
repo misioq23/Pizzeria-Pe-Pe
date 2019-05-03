@@ -17,6 +17,7 @@
 	padding: .5rem;
 	border: none;
 	transition: opacity $modal__animation--time ease-out, visibility $modal__animation--time;
+	will-change: transform;
 	@include tablet {
 		padding: 1.75rem;
 	}
@@ -50,6 +51,7 @@
 
 .modal__close {
 	display: inline-block;
+	will-change: transform;
 	.burger__line {
 		background: $color__secondary;
 	}
