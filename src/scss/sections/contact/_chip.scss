@@ -11,7 +11,8 @@ $second--hover: $color__fourth;
 	fill: $first;
 	border: .1em solid $first;
 	transition: all .2s ease-in;
-	&:hover {
+	&:hover,
+	&:focus {
 		background: $first--hover;
 		color: $second--hover;
 		fill: $second--hover;
