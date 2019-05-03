@@ -6,9 +6,7 @@
     position: fixed;
     bottom: 0;
     z-index: 1500;
-
-    width: 100vw;
-
+    width: 100%;
     background-color: rgba(245, 130, 32, 0.9);
     color: $text__bright;
 }
@@ -19,14 +17,17 @@
     justify-content: space-between;
     align-items: center;
 
-    width: 95vw;
-    padding: 1em 0;
+    max-width: 80%;
+	padding: 2em 0;
     @include center__standard;
-
+	
     @include laptop {
-        flex-direction: row;
-        
-        width: $max-width;
+		flex-direction: row;
+		padding: 1em 0;
+        max-width: 60em;
+    }
+    @include desktop {
+        max-width: $max-width;
     }
 }
 
@@ -35,22 +36,11 @@
 
     font-size: 0.75em;
     text-align: justify;
-    line-height: 1.8em;
-
+	line-height: 1.8em;
+	width: 100%;
     @include laptop {
         margin: 0;
         padding-right: 5em;
-    }
-}
-
-.cookie__header {
-    margin-bottom: 1em;
-    
-    font-size: 1.2em;
-    text-align: center;
-
-    @include laptop {
-        text-align: left;
     }
 }
 
@@ -61,7 +51,6 @@
     background: $color__fourth;
     box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.75);
 
-    font-size: 1em;
     font-weight: 500;
     text-transform: uppercase;
 
