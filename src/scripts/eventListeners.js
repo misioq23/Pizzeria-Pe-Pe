@@ -25,7 +25,6 @@ export default function eventListener() {
 			const actualPos = window.pageYOffset;
 			scroll.calculatePositions(actualPos);
 			sections.calcSectionsPosition(actualPos, elements.sectionCheckpointsArray);
-			// navbar color update needed
 			burger.deactivate();
 		}, 200));
 
