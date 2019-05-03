@@ -46,7 +46,10 @@ export default (function(elementsList) {
 		},
 
 		checkSectionPosition(actualPosition) {
-			data.actualCheckpoint = findScrollCheckpoint(actualPosition);
+			if (typeof actualPosition === 'number') {
+				actualPosition = findScrollCheckpoint(actualPosition);
+			}
+			data.actualCheckpoint = actualPosition;
 			if (data.previousCheckpoint !== data.actualCheckpoint) {
 				updateLayout();
 			}

@@ -1,5 +1,6 @@
 import { elements, elementStrings } from '../config';
 import { focusTrap } from '../functions/focusTrap';
+import sections from '../sections';
 
 export default (function() {
 	const data = {
@@ -43,6 +44,7 @@ export default (function() {
 		data.focusElement = document.activeElement;
 		data.focusElement.blur();
 		focusTrap.add('dialog');
+		sections.checkSectionPosition('#menu');
 		window.addEventListener('keydown', keyPressClose);
 		elements.modal.addEventListener('click', clickOutside);
 	}
@@ -51,6 +53,7 @@ export default (function() {
 		modalToggle();
 		data.focusElement.focus();
 		focusTrap.remove('dialog');
+		sections.checkSectionPosition(window.pageYOffset);
 		window.removeEventListener('keydown', keyPressClose);
 		elements.modal.removeEventListener('click', clickOutside);
 	}
