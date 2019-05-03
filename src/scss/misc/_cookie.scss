@@ -1,0 +1,73 @@
+@import "mixins/burger";
+@import "mixins/center";
+@import "mixins/media_queries";
+
+.cookie {
+    position: fixed;
+    bottom: 0;
+    z-index: 1500;
+
+    width: 100vw;
+
+    background-color: rgba(245, 130, 32, 0.9);
+    color: $text__bright;
+}
+
+.cookie__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 95vw;
+    padding: 1em 0;
+    @include center__standard;
+
+    @include laptop {
+        flex-direction: row;
+        
+        width: $max-width;
+    }
+}
+
+.cookie__text {
+    margin-bottom: 2em;
+
+    font-size: 0.75em;
+    text-align: justify;
+    line-height: 1.8em;
+
+    @include laptop {
+        margin: 0;
+        padding-right: 5em;
+    }
+}
+
+.cookie__header {
+    margin-bottom: 1em;
+    
+    font-size: 1.2em;
+    text-align: center;
+
+    @include laptop {
+        text-align: left;
+    }
+}
+
+.cookie__btn {
+    padding: 0.5em 1em;
+    border-radius: 2em;
+
+    background: $color__fourth;
+    box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.75);
+
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    &:active {
+        box-shadow: 0 0.2em 1.3em rgba(0, 0, 0, 0.75);
+    }
+}
