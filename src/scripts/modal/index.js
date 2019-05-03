@@ -5,6 +5,7 @@ export default (function() {
 	const data = {
 		modalOpen: false,
 		menuScript: false,
+		focusElement: '',
 	};
 	function downloadMenu() {
 		const menuScript = document.createElement('script');
@@ -39,16 +40,17 @@ export default (function() {
 			downloadMenu();
 		}
 		modalToggle();
+		data.focusElement = document.activeElement;
+		data.focusElement.blur();
 		focusTrap.add('dialog');
-
 		window.addEventListener('keydown', keyPressClose);
 		elements.modal.addEventListener('click', clickOutside);
 	}
 
 	function close() {
 		modalToggle();
+		data.focusElement.focus();
 		focusTrap.remove('dialog');
-
 		window.removeEventListener('keydown', keyPressClose);
 		elements.modal.removeEventListener('click', clickOutside);
 	}
