@@ -1,0 +1,47 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	margin: 5em 0;
+    text-align: center;
+	color: $color__primary;
+	fill: $color__primary;
+	&:focus,
+	&:active,
+	&:hover {
+		color: $color__primary;
+	}
+}
+
+.menu__text {
+	font-size: 1.5em;
+	font-weight: 300;
+	text-decoration: none;
+	margin-bottom: 1.6em;
+	@include tablet {
+		font-size: 2em;
+		font-weight: 400;
+	}
+}
+
+.menu__loader {
+	margin: 0 auto;
+	height: 3rem;
+	width: 3rem;
+	transform-origin: 44% 50%;
+	animation: rotate 1.5s infinite linear;
+	@include tablet {
+		height: 4rem;
+		width: 4rem;
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
