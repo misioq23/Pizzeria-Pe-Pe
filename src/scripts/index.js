@@ -1,2 +1,2 @@
 export { default as controller } from './controller';
-export { startMap } from './functions/map';
+export { default as startMap } from './map';
