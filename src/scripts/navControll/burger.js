@@ -1,4 +1,4 @@
-import { focusTrap } from '../functions/focusTrap';
+import focusTrap from '../focusTrap';
 import { elements, elementStrings } from '../config';
 
 const burger = (function() {

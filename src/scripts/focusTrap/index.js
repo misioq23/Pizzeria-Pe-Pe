@@ -1,6 +1,4 @@
-import { elements } from '../config';
-
-export const focusTrap = (function() {
+export default (function() {
 
 	function findElements(element) {
 		const focusable = element.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');

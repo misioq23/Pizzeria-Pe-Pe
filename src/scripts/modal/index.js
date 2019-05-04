@@ -1,5 +1,5 @@
 import { elements, elementStrings } from '../config';
-import { focusTrap } from '../functions/focusTrap';
+import focusTrap from '../focusTrap';
 import sections from '../sections';
 
 export default (function() {
