@@ -43,14 +43,22 @@ export default (function() {
 		focusTrap.trapToggle(allFocus, data.modalOpen);
 	}
 
+	function _disableBtn() {
+		if (data.modalOpen) {
+			data.focusElement = document.activeElement;
+			data.focusElement.blur();
+		} else {
+			data.focusElement.focus();
+		}
+	}
+
 	function open() {
 		if (!data.menuScript) {
 			_downloadMenu();
 		}
 		_modalToggle();
 		// save & disable clicked button which opens modal
-		data.focusElement = document.activeElement;
-		data.focusElement.blur();
+		_disableBtn();
 		// focus trap on whole page
 		_modalFocusTrap();
 		// change address bar
@@ -65,7 +73,7 @@ export default (function() {
 	function close() {
 		_modalToggle();
 		// enable clicked button which opens modal
-		data.focusElement.focus();
+		_disableBtn();
 		// remove focus trap on whole page
 		_modalFocusTrap();
 		// change address bar
