@@ -13,6 +13,10 @@ export default function eventListener() {
 		const actualPos = window.pageYOffset;
 		scroll.calculatePositions(actualPos);
 		sections.calcSectionsPosition(actualPos, elements.sectionCheckpointsArray);
+		// Open modal when address on paste
+		if (window.location.hash === '#menu') {
+			modal.open();
+		}
 		// Navbar Click
 		elements.navbar.addEventListener('click', navControll);
 		elements.burger.addEventListener('click', burger.toggle);
@@ -23,7 +27,10 @@ export default function eventListener() {
 		window.addEventListener('resize', debounce(() => {
 			const actualPos = window.pageYOffset;
 			scroll.calculatePositions(actualPos);
-			sections.calcSectionsPosition(actualPos, elements.sectionCheckpointsArray);
+			// Check address change on resize only when it isn't #menu
+			if (window.location.hash !== '#menu') {
+				sections.calcSectionsPosition(actualPos, elements.sectionCheckpointsArray);
+			}
 			burger.deactivate();
 		}, 200));
 
@@ -34,5 +41,12 @@ export default function eventListener() {
 			// Data address for window.location and scrollSpy
 			sections.checkSectionPosition(window.pageYOffset);
 		}, 80));
+
+		window.addEventListener('hashchange', () => {
+			// Open modal on change address
+			if (location.hash === '#menu') {
+				modal.open();
+			}
+		});
 	});
 }
