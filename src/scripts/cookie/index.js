@@ -1,9 +1,9 @@
 import { set, get } from '@firstandthird/cookie-monster';
 import { elements, elementStrings } from '../config';
 
-export const cookies = (function() {
+export default (function() {
 
-	function cookieShow() {
+	function _cookieShow() {
 		const markup = `<div class="cookie__wrapper">
 			<p class="cookie__text">Używamy informacji zapisanych za pomocą plików cookies w celu zapewnienia maksymalnej wygody w korzystaniu z naszego serwisu. Mogą też korzystać z nich współpracujące z nami firmy badawcze oraz reklamowe. Jeżeli wyrażasz zgodę na zapisywanie informacji zawartej w cookies kliknij przycisk &bdquo;AKCEPTUJĘ&rdquo;. Jeśli nie wyrażasz zgody, ustawienia dotyczące plików cookies możesz zmienić w swojej przeglądarce.</p>
 			<button class="btn ${elementStrings.cookieBtn}">AKCEPTUJĘ</button>
@@ -11,20 +11,20 @@ export const cookies = (function() {
 		elements.cookie.insertAdjacentHTML('beforeend', markup);
 	};
 
-	function clickHandler(e) {
+	function _clickHandler(e) {
 		if (e.target.classList.contains(elementStrings.cookieBtn)) {
 			set('cookieinfo', 'true', 365);
-			elements.cookie.removeEventListener('click', clickHandler);
+			elements.cookie.removeEventListener('click', _clickHandler);
 			elements.cookie.parentNode.removeChild(elements.cookie);
 		}
 	}
 
 	function createCookie() {
-		if (get('cookieinfo') === 'true') {
+		if (get('cookieinfo')) {
 			return false;
 		}
-		cookieShow();
-		elements.cookie.addEventListener('click', clickHandler);
+		_cookieShow();
+		elements.cookie.addEventListener('click', _clickHandler);
 	}
 	return { createCookie };
 }());

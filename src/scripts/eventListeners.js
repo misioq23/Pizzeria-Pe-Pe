@@ -1,5 +1,6 @@
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
+import cookie from './cookie';
 import burger from './navControll/burger';
 import navControll from './navControll';
 import modal from './modal';
@@ -9,6 +10,8 @@ import { elements } from './config';
 
 export default function eventListener() {
 	document.addEventListener('DOMContentLoaded', () => {
+		// Check cookies
+		cookie.createCookie();
 		// Scroll & section init
 		const actualPos = window.pageYOffset;
 		scroll.calculatePositions(actualPos);
