@@ -4,18 +4,16 @@ import { elements, elementStrings } from '../config';
 const burger = (function() {
 	const data = {
 		navOpen: false,
-		trap: false
 	};
 
 	const trapToggle = () => {
-		data.trap = !data.trap;
-		data.trap ? focusTrap.add('') : focusTrap.remove('');
+		focusTrap.trapToggle(focusTrap.findElements(elements.main), data.navOpen);
 	};
 	const ariaExpanded = () => {
-		data.navOpen = !data.navOpen;
 		elements.burger.setAttribute('aria-expanded', data.navOpen);
 	};
 	const burgerToggle = () => {
+		data.navOpen = !data.navOpen;
 		trapToggle();
 		ariaExpanded();
 		elements.navbar.classList.toggle(elementStrings.burgerActive);

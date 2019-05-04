@@ -19,7 +19,6 @@ export default function eventListener() {
 		// Modal
 		elements.heroBtn.addEventListener('click', modal.open);
 		elements.offerBtn.addEventListener('click', modal.open);
-		elements.modalClose.addEventListener('click', modal.close);
 
 		window.addEventListener('resize', debounce(() => {
 			const actualPos = window.pageYOffset;
@@ -30,7 +29,7 @@ export default function eventListener() {
 
 		window.addEventListener('scroll', throttle(() => {
 			scroll.scroll();
-		}, 20));
+		}, 15));
 		window.addEventListener('scroll', debounce(() => {
 			// Data address for window.location and scrollSpy
 			sections.checkSectionPosition(window.pageYOffset);
