@@ -8,7 +8,7 @@ import sections from './sections';
 import scroll from './scrollControll';
 import { elements } from './config';
 
-export default function eventListener() {
+export default (function() {
 	document.addEventListener('DOMContentLoaded', () => {
 		// Check cookies
 		cookie.createCookie();
@@ -52,4 +52,4 @@ export default function eventListener() {
 			}
 		});
 	});
-}
+}());
