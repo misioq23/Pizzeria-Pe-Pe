@@ -6,7 +6,7 @@ export const cookies = (function() {
 	function cookieShow() {
 		const markup = `<div class="cookie__wrapper">
 			<p class="cookie__text">Używamy informacji zapisanych za pomocą plików cookies w celu zapewnienia maksymalnej wygody w korzystaniu z naszego serwisu. Mogą też korzystać z nich współpracujące z nami firmy badawcze oraz reklamowe. Jeżeli wyrażasz zgodę na zapisywanie informacji zawartej w cookies kliknij przycisk &bdquo;AKCEPTUJĘ&rdquo;. Jeśli nie wyrażasz zgody, ustawienia dotyczące plików cookies możesz zmienić w swojej przeglądarce.</p>
-			<button class="${elementStrings.cookieBtn}">AKCEPTUJĘ</button>
+			<button class="btn ${elementStrings.cookieBtn}">AKCEPTUJĘ</button>
 		</div>`;
 		elements.cookie.insertAdjacentHTML('beforeend', markup);
 	};

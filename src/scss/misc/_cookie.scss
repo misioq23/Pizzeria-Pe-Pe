@@ -14,7 +14,7 @@
 .cookie__wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     max-width: 80%;
@@ -40,23 +40,13 @@
 	width: 100%;
     @include laptop {
         margin: 0;
-        padding-right: 5em;
+		max-width: 80%;
     }
 }
 
 .cookie__btn {
     padding: 0.5em 1em;
-    border-radius: 2em;
-
-    background: $color__fourth;
-    box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.75);
-
-    font-weight: 500;
+	color: $color__fourth;
+	border: $color__fourth solid .1em;
     text-transform: uppercase;
-
-    cursor: pointer;
-
-    &:active {
-        box-shadow: 0 0.2em 1.3em rgba(0, 0, 0, 0.75);
-    }
 }
