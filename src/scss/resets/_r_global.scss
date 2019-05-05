@@ -9,15 +9,9 @@ h4,
 h5,
 h6,
 p,
-ul,
-dialog {
+ul {
 	margin: 0;
 	padding: 0;
-}
-
-dialog {
-	border: none;
-	display: block;
 }
 
 ul {
@@ -70,4 +64,7 @@ a{
 	font: inherit;
 }
 
-
+.element__hidden {
+  position: absolute;
+  left: -999em;
+}

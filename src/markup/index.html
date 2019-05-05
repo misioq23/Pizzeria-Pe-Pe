@@ -116,7 +116,7 @@
 					<p class="card__text">Mamy przyjemność zaprosić Państwa w podróż po świecie smaków. Prawdziwą ucztę rozpoczynamy od przystawek, poprzez finezyjne dania kuchni włoskiej oraz wariacje na ich temat. Możemy skończyć deserem i aromatyczną kawą ale nie musimy, gdyż to nie jest nasze ostatnie słowo.</p>
 				</article>
 				
-				<button class="btn offer__btn" title="Otwórz menu" role="button">
+				<button class="btn offer__btn" title="Otwórz menu">
 					<svg class="btn__icon btn__icon--big" viewBox="0 0 512 512">
 						<path d="m456.4 334.4c-0.5-0.8-1-1.6-1.5-2.3-5.2-7.2-12.9-12-21.6-13.4-8.7-1.4-17.6 0.6-24.8 5.8l-95.4 68.1h-99.7c-4.7 0-8.5-3.8-8.5-8.5s3.8-8.5 8.5-8.5h55.5c16.5 0 29.9-13.4 29.9-29.9 0-0.1 0-0.9 0-1-0.5-16.5-14.4-29.3-30.5-28.9h-111c-9.8 0.1-19.4 3.6-27 9.9l-41.7 34.7c-1.9 1.6-3.1 4-3.1 6.6v102.4c0 4.7 3.8 8.5 8.5 8.5h211.7c13.9 0 27.4-4.9 38-13.7l103.5-85.5c14.1-10 18.1-29.4 9.3-44.3zm-19.7 30.7l-103.9 85.9c-7.6 6.3-17.3 9.8-27.2 9.8h-203.2v-89.9l38.7-32.2c4.5-3.8 10.3-5.9 16.1-5.9l111.2 0c7.1 0 13 5.3 13.2 12.8 0 7.1-5.7 12.8-12.8 12.8h-55.5c-14.1 0-25.6 11.5-25.6 25.6s11.5 25.6 25.6 25.6h102.4c1.8 0 3.5-0.6 5-1.6l97.6-69.7c3.5-2.5 7.8-3.5 12.1-2.8 4.3 0.7 8 3 10.6 6.6 0.3 0.4 0.5 0.7 0.7 1.1 4.3 7.2 2.3 16.7-5 22z"/>
 						<path d="m93.6 349.9h-93.6v17.1h85.1v128h-85.1v17.1h93.6c4.7 0 8.5-3.8 8.5-8.5v-145.1c0-4.7-3.8-8.5-8.5-8.5z"/>
@@ -235,14 +235,15 @@
             </div>
         </section>
     </main>
-	<dialog class="modal">
+	<div class="modal">
 		<div class="modal__dialog">
 			<header class="modal__header">
-				<button title="Zamknij menu" role="button" class="burger burger--active modal__close">
+				<button title="Zamknij menu" class="burger burger--active modal__close">
 					<span class="burger__line"></span>
 				</button>
 			</header>
 			<section class="modal__body">
+				<h1 class="element__hidden">Menu:</h1>
 				<a href="https://www.skubacz.pl" class="skubacz_widget menu" title="Menu w Skubacz.pl">
 					<span class="menu__text">Wczytuję menu, proszę czekać...</span>
 					<svg class="menu__loader" viewBox="0 0 20 20">
@@ -251,8 +252,8 @@
 				</a>
 			</section>
 		</div>
-	</dialog>
-	<dialog class="cookie"></dialog>
+	</div>
+	<div class="cookie"></div>
     <footer class="footer">
 		Copyright &copy; 2018 – 2019 Restauracja Pizzeria Pe-Pe • Developed by Las Media
 	</footer>
