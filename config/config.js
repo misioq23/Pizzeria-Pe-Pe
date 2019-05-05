@@ -25,7 +25,7 @@ export default {
 		css: 'build/css/',
 		js: 'build/js/bundle.js',
 		img: 'build/img/',
-		name: 'example',
+		name: 'pepe',
 		bundleFormat: 'iife'
 	},
 
