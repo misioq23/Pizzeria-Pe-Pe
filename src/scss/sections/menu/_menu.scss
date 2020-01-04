@@ -1,11 +1,12 @@
 .menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	margin: 5em 0;
-    text-align: center;
+	text-align: center;
 	color: $color__primary;
 	fill: $color__primary;
+
 	&:focus,
 	&:active,
 	&:hover {
@@ -18,6 +19,7 @@
 	font-weight: 300;
 	text-decoration: none;
 	margin-bottom: 1.6em;
+
 	@include tablet {
 		font-size: 2em;
 		font-weight: 400;
@@ -30,6 +32,7 @@
 	width: 3rem;
 	transform-origin: 44% 50%;
 	animation: rotate 1.5s infinite linear;
+
 	@include tablet {
 		height: 4rem;
 		width: 4rem;

@@ -1,32 +1,33 @@
 @import '../mixins/center';
 @import '../mixins/media_queries';
+
 .btn {
 	display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-	
-    padding: 1em 2em;
-    border-radius: 0.8em;
-
-    font-weight: 500;
-    line-height: 1;
-
-    cursor: pointer;
+	flex-wrap: nowrap;
+	align-items: center;
+	padding: 1em 2em;
+	border-radius: 0.8em;
+	font-weight: 500;
+	line-height: 1;
+	cursor: pointer;
 }
 
 $btn__icon: 1.6em;
 $btn__icon--med: 2.5rem;
 $btn__icon--big: 3.5rem;
+
 .btn__icon {
-    width: $btn__icon;
-    height: $btn__icon;
-    margin-right: 0.5em;
+	width: $btn__icon;
+	height: $btn__icon;
+	margin-right: 0.5em;
 }
+
 .btn__icon--med {
-    width: $btn__icon--med;
+	width: $btn__icon--med;
 	height: $btn__icon--med;
 }
+
 .btn__icon--big {
-    width: $btn__icon--big;
+	width: $btn__icon--big;
 	height: $btn__icon--big;
 }

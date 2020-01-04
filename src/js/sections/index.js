@@ -8,11 +8,11 @@ export default (function(elementsList) {
 	};
 	// return #name string
 	function findScrollCheckpoint(actualPosition) {
-		for (const el of data.checkpoints) {
-			if (actualPosition < data.documentTopHeight && el.start <= actualPosition && actualPosition < el.end) {
+		for (const el of data.checkpoints)
+			if (actualPosition < data.documentTopHeight && el.start <= actualPosition && actualPosition < el.end)
 				return el.name;
-			}
-		}
+
+
 		return data.checkpoints[data.checkpoints.length - 1].name;
 	}
 
@@ -20,10 +20,10 @@ export default (function(elementsList) {
 		// Scroll Spy
 		scrollSpy.spy(data.actualCheckpoint);
 		// if undefined address opened for first time open correctly
-		if (data.previousCheckpoint !== undefined) {
+		if (data.previousCheckpoint !== undefined)
 			// Change location address
 			addressChange(data.actualCheckpoint);
-		}
+
 		data.previousCheckpoint = data.actualCheckpoint;
 	}
 
@@ -33,26 +33,24 @@ export default (function(elementsList) {
 			// Top of window postion at the end of document
 			data.documentTopHeight = Math.floor(elements.body.getBoundingClientRect().height - window.innerHeight);
 			// Array of checkpoint objects
-			data.checkpoints = data.sectionsArray.map((el) => {
-				return {
-					name: el.dataset.checkpoint,
-					start: el.getBoundingClientRect().top + actualPosition - navbarHeight,
-					end: el.getBoundingClientRect().bottom + actualPosition - navbarHeight,
-				};
-			});
+			data.checkpoints = data.sectionsArray.map(el => ({
+				name: el.dataset.checkpoint,
+				start: el.getBoundingClientRect().top + actualPosition - navbarHeight,
+				end: el.getBoundingClientRect().bottom + actualPosition - navbarHeight,
+			}));
 
 			data.actualCheckpoint = findScrollCheckpoint(actualPosition);
 			updateLayout();
 		},
 
 		checkSectionPosition(actualPosition) {
-			if (typeof actualPosition === 'number') {
+			if (typeof actualPosition === 'number')
 				actualPosition = findScrollCheckpoint(actualPosition);
-			}
+
 			data.actualCheckpoint = actualPosition;
-			if (data.previousCheckpoint !== data.actualCheckpoint) {
+			if (data.previousCheckpoint !== data.actualCheckpoint)
 				updateLayout();
-			}
-		}
+
+		},
 	};
 }(elements.sectionCheckpoints));

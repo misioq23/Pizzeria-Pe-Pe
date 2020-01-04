@@ -1,14 +1,16 @@
-.nav{
+.nav {
 	display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 85em;
-   	height: $navbar__height;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 85em;
+	height: $navbar__height;
 	margin: 0 auto;
+
 	@include laptop {
 		justify-content: space-around;
 	}
+
 	@include desktop {
 		justify-content: space-between;
 	}
@@ -22,28 +24,27 @@
 	top: $navbar__height;
 	left: 0;
 	visibility: hidden;
-    width: 100vw;
-    height: 100vh;
+	width: 100vw;
+	height: 100vh;
 	background: $nav__background--mobile;
 	color: $navbar__color--primary;
 	opacity: 0;
 	will-change: opacity;
 	transition: $nav__mobile--active;
-	
+
 	@include laptop {
 		flex-direction: row;
 		flex-basis: auto;
 		position: static;
-		visibility: visible;	
+		visibility: visible;
 		width: auto;
 		height: auto;
-		
 		background: none;
-		
 		opacity: 1;
 		transition: none;
 	}
 }
+
 .burger--active .nav__list {
 	visibility: visible;
 	opacity: 1;
@@ -52,42 +53,42 @@
 .nav__link {
 	position: relative;
 	display: inline-block;
-
-    width: 100%;
+	width: 100%;
 	padding: ($navbar__height - $nav__link--size)/2;
-	
-    font-size: $nav__link--size;
-    font-weight: 400;
-    line-height: 1;
-    text-align: center;
-    text-transform: uppercase;
-
+	font-size: $nav__link--size;
+	font-weight: 400;
+	line-height: 1;
+	text-align: center;
+	text-transform: uppercase;
 	cursor: pointer;
+
 	&:active,
 	&:hover,
 	&:focus {
 		background: $navbar__color--primary;
 		color: $navbar__color--secondary;
+
 		@include laptop {
 			background: transparent;
 			color: inherit;
 		}
 	}
+
 	&::after {
 		content: '';
 		position: absolute;
 		left: 0;
 		right: 0;
-		bottom: .75em;
-		
+		bottom: 0.75em;
 		width: 70%;
 		margin: 0 auto;
 	}
-    &:active::after,
+
+	&:active::after,
 	&:hover::after,
 	&:focus::after {
 		@include laptop {
-			border-width: 0 0 .05em;
+			border-width: 0 0 0.05em;
 			border-style: solid;
 		}
 	}
@@ -96,7 +97,7 @@
 .nav__link--active {
 	&::after {
 		@include laptop {
-			border-width: 0 0 .05em;
+			border-width: 0 0 0.05em;
 			border-style: solid;
 		}
 	}

@@ -2,9 +2,10 @@
 	position: relative;
 	padding: 4.5em 0;
 	background: #fff;
-    @include laptop {
-        padding: 8em 0;
-    }
+
+	@include laptop {
+		padding: 8em 0;
+	}
 }
 
 .section__wrapper {
@@ -13,12 +14,13 @@
 	justify-content: space-around;
 	margin: 0 auto;
 	width: 90%;
-    max-width: $max-width;
+	max-width: $max-width;
 }
 
 .section__wrapper--fluid {
 	justify-content: center;
 	width: 100%;
+
 	@include tablet {
 		justify-content: space-between;
 		width: 90%;
@@ -28,10 +30,11 @@
 .section__header {
 	flex: 0 0 100%;
 	width: 100%;
-    margin-bottom: 1.5em;
-    font-family: $font__secondary;
-    font-weight: 100;
+	margin-bottom: 1.5em;
+	font-family: $font__secondary;
+	font-weight: 100;
 	text-align: center;
+
 	@include laptop {
 		margin-bottom: 1.8em;
 	}

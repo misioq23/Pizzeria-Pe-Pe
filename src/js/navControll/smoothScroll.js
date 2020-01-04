@@ -20,9 +20,9 @@ const smoothScroll = (destination, duration = 800) => {
 		const elapsed = Date.now() - clock;
 		window.scroll(0, position(start, end, elapsed, duration));
 
-		if (elapsed < duration) {
+		if (elapsed < duration)
 			requestAnimationFrame(step);
-		}
+
 	};
 	step();
 };

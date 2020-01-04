@@ -9,14 +9,15 @@ $second--hover: $color__fourth;
 	background: $second;
 	color: $first;
 	fill: $first;
-	border: .1em solid $first;
-	transition: all .2s ease-in;
+	border: 0.1em solid $first;
+	transition: all 0.2s ease-in;
+
 	&:hover,
 	&:focus {
 		background: $first--hover;
 		color: $second--hover;
 		fill: $second--hover;
-		border: .1em solid $first--hover;
+		border: 0.1em solid $first--hover;
 	}
 }
 
@@ -24,7 +25,7 @@ $second--hover: $color__fourth;
 	position: relative;
 	width: 4em;
 	height: 4em;
-	padding: .8em;
+	padding: 0.8em;
 }
 
 .chip__text {

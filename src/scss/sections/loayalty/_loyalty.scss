@@ -1,18 +1,20 @@
-$primary__loyalty: #FFF !default;
-$secondary__loyalty: #F58220 !default;
+$primary__loyalty: #fff !default;
+$secondary__loyalty: #f58220 !default;
 
 .loyalty {
-    background-color: $primary__loyalty;
-    background-image: url('../img/sunny--watermark.svg');
-    background-repeat: no-repeat;
+	background-color: $primary__loyalty;
+	background-image: url('../assets/icons/sunny--watermark.svg');
+	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: -25vw 50vh;
-    color: $secondary__loyalty;
-    fill: $secondary__loyalty;
+	color: $secondary__loyalty;
+	fill: $secondary__loyalty;
 	z-index: 2;
+
 	@include tablet {
 		background-position: -25vw 0;
 	}
+
 	@include laptop {
 		background-size: 65%;
 		background-position: -5vw 2vh;
@@ -31,23 +33,27 @@ $secondary__loyalty: #F58220 !default;
 		transform: rotate(2deg);
 		transform-origin: 0 0;
 	}
+
 	&::before {
 		height: 50%;
-		background: darken(#6BA42C, 5%);
+		background: darken(#6ba42c, 5%);
 		transform: rotate(4deg);
 		transform-origin: 1% 0;
 	}
-	
+
 	& .card {
 		width: 100vw;
 		text-align: center;
+
 		@include tablet {
 			max-width: 20em;
 			text-align: left;
 		}
+
 		@include laptop {
 			max-width: 25em;
 		}
+
 		@include desktop {
 			max-width: 32em;
 		}

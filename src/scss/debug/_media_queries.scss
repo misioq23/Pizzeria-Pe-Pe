@@ -3,25 +3,25 @@
 $border: rem(5);
 
 html {
-    border-width: $border;
-    border-style: solid;
-    border-color: blue;
+	border-width: $border;
+	border-style: solid;
+	border-color: blue;
 
-    @include tablet {
-        border-width: $border;
-        border-style: solid;
-        border-color: green;
-    }
+	@include tablet {
+		border-width: $border;
+		border-style: solid;
+		border-color: green;
+	}
 
-    @include laptop {
-        border-width: $border;
-        border-style: solid;
-        border-color: yellow;
-    }
+	@include laptop {
+		border-width: $border;
+		border-style: solid;
+		border-color: yellow;
+	}
 
-    @include desktop {
-        border-width: $border;
-        border-style: solid;
-        border-color: purple;
-    }
+	@include desktop {
+		border-width: $border;
+		border-style: solid;
+		border-color: purple;
+	}
 }

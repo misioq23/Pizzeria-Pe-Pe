@@ -6,15 +6,15 @@ export default (function() {
 	}
 
 	function trapToggle(array, trap) {
-		if (trap) {
-			array.forEach((element) => {
+		if (trap)
+			array.forEach(element => {
 				element.setAttribute('tabindex', -1);
 			});
-		} else {
-			array.forEach((element) => {
+		 else
+			array.forEach(element => {
 				element.removeAttribute('tabindex', -1);
 			});
-		}
+
 	}
 	return { findElements, trapToggle };
 }());

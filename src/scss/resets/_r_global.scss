@@ -22,7 +22,7 @@ html {
 	min-height: 100%;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
-	
+
 	//Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS:
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
@@ -35,6 +35,21 @@ html {
 main {
 	overflow-x: hidden; //One :before :after section separator made site overflow-x
 	display: block; //For IE
+}
+
+a,
+input,
+textarea,
+select,
+button {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+.element__hidden {
+	position: absolute;
+	left: -999em;
 }
 
 a {
@@ -51,20 +66,6 @@ a {
 button {
 	border: none;
 	background: none;
+
 	@include text__selection--none; //For which browser
-}
-
-input,
-textarea,
-select,
-button,
-a{
-	margin: 0;
-	padding: 0;
-	font: inherit;
-}
-
-.element__hidden {
-  position: absolute;
-  left: -999em;
 }

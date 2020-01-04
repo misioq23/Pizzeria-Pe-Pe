@@ -1,33 +1,33 @@
 @import '../../mixins/burger';
+
 .burger {
-    position: relative;
+	position: relative;
 	z-index: 101;
-
-    width: $navbar__height;
-    height: $navbar__height;
-
+	width: $navbar__height;
+	height: $navbar__height;
 	cursor: pointer;
 
 	@include laptop {
 		display: none;
 	}
 }
+
 .burger__line {
-    @include burger--static($navbar__height, $navbar__color--primary);
+	@include burger--static($navbar__height, $navbar__color--primary);
 }
 
 .burger--active .burger__line {
-    transform: rotate(315deg);
+	transform: rotate(315deg);
 
-    &:before {
-    transform: rotate(270deg);
-    }
+	&::before {
+		transform: rotate(270deg);
+	}
 
-    &:after {
-    transform: translateY(0);
-    }
+	&::after {
+		transform: translateY(0);
+	}
 }
 
 .navbar--scroll .burger__line {
-    background:  $navbar__color--secondary;
+	background: $navbar__color--secondary;
 }

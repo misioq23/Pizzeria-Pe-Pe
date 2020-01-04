@@ -3,50 +3,51 @@
 @import "mixins/media_queries";
 
 .cookie {
-    position: fixed;
-    bottom: 0;
-    z-index: 1500;
-    width: 100%;
-    background-color: rgba(245, 130, 32, 0.9);
-    color: $text__bright;
+	position: fixed;
+	bottom: 0;
+	z-index: 1500;
+	width: 100%;
+	background-color: rgba(245, 130, 32, 0.9);
+	color: $text__bright;
 }
 
 .cookie__wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-
-    max-width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	max-width: 80%;
 	padding: 2em 0;
-    @include center__standard;
-	
-    @include laptop {
+
+	@include center__standard;
+
+	@include laptop {
 		flex-direction: row;
 		padding: 1em 0;
-        max-width: 60em;
-    }
-    @include desktop {
-        max-width: $max-width;
-    }
+		max-width: 60em;
+	}
+
+	@include desktop {
+		max-width: $max-width;
+	}
 }
 
 .cookie__text {
-    margin-bottom: 2em;
-
-    font-size: 0.75em;
-    text-align: justify;
+	margin-bottom: 2em;
+	font-size: 0.75em;
+	text-align: justify;
 	line-height: 1.8em;
 	width: 100%;
-    @include laptop {
-        margin: 0;
+
+	@include laptop {
+		margin: 0;
 		max-width: 80%;
-    }
+	}
 }
 
 .cookie__btn {
-    padding: 0.5em 1em;
+	padding: 0.5em 1em;
 	color: $color__fourth;
-	border: $color__fourth solid .1em;
-    text-transform: uppercase;
+	border: $color__fourth solid 0.1em;
+	text-transform: uppercase;
 }

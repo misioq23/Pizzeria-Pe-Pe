@@ -3,16 +3,17 @@ $hero__triangle--height: 10vh;
 
 $hero__height--mobile: 100vh;
 $hero__height--desktop: 100vh;
+
 .hero {
 	position: relative;
 	overflow: hidden;
 	height: $hero__height--mobile;
-	background-image: url(../img/hero__sm.jpg);
-    background-repeat: no-repeat;
+	background-image: url(../assets/images/hero__sm.jpg);
+	background-repeat: no-repeat;
 	background-size: cover;
 
 	@include tablet {
-		background-image: url(../img/hero__md.jpg);
+		background-image: url(../assets/images/hero__md.jpg);
 	}
 
 	@include laptop {
@@ -33,13 +34,13 @@ $hero__height--desktop: 100vh;
 	}
 
 	&::before {
-	left: 0;
-	border-left: $hero__triangle--width solid transparent;
-}
+		left: 0;
+		border-left: $hero__triangle--width solid transparent;
+	}
 
-&::after {
-	right: 0;
-	border-right: $hero__triangle--width solid transparent;
+	&::after {
+		right: 0;
+		border-right: $hero__triangle--width solid transparent;
 	}
 
 	@include laptop {
@@ -52,10 +53,11 @@ $hero__height--desktop: 100vh;
 
 .hero__parallax {
 	display: none;
+
 	@include laptop {
 		position: fixed;
 		z-index: -2;
-		display: inline;
+		display: block;
 		width: 100vw;
 		height: 100vh;
 		object-fit: cover;
@@ -73,7 +75,7 @@ $hero__height--desktop: 100vh;
 }
 
 .hero__overlay--static {
-	background: rgba(0, 0, 0, .25);
+	background: rgba(0, 0, 0, 0.25);
 }
 
 .hero__overlay--gradient {

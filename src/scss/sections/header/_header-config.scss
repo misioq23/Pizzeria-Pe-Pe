@@ -3,19 +3,17 @@ $logo__height: 3.75rem;
 $logo--size: 2rem;
 $nav__link--size: 1.25rem;
 
-$base--s: .75; // multiplier for small devices
-$base--m: .9; // multiplier for medium devices
+$base--s: 0.75; // multiplier for small devices
+$base--m: 0.9; // multiplier for medium devices
 
 $navbar__background--primary: transparent;
 $navbar__background--secondary: $color__fourth;
 $navbar__color--primary: $color__fourth;
 $navbar__color--secondary: $color__primary;
-$nav__background--mobile: rgba(#333, .9);
+$nav__background--mobile: rgba(#333, 0.9);
 
-$scroll--time: .25s;
-$nav-burger--time: .35s;
+$scroll--time: 0.25s;
+$nav-burger--time: 0.35s;
 $navbar--scroll: background-color $scroll--time ease-in, color $scroll--time ease-in, fill $scroll--time ease-in;
 $burger--active: transform $nav-burger--time linear;
 $nav__mobile--active: opacity $nav-burger--time ease-out, visibility $nav-burger--time;
-
-

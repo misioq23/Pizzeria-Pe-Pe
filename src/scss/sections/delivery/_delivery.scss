@@ -1,11 +1,12 @@
-$primary__delivery: #6BA42C !default;
-$secondary__delivery: #FFF !default;
+$primary__delivery: #6ba42c !default;
+$secondary__delivery: #fff !default;
 
 .delivery {
-    background: $primary__delivery;
-    color: $secondary__delivery;
-    fill: $secondary__delivery;
+	background: $primary__delivery;
+	color: $secondary__delivery;
+	fill: $secondary__delivery;
 	border-color: $secondary__delivery;
+
 	&::before {
 		@include laptop {
 			position: absolute;
@@ -15,18 +16,21 @@ $secondary__delivery: #FFF !default;
 			bottom: -1em;
 			right: -60vw;
 			content: '';
-			background-image: url(../img/delivery__road.svg);
+			background-image: url(../assets/icons/delivery__road.svg);
 			background-size: contain;
 			background-repeat: no-repeat;
 		}
 	}
+
 	& .section__wrapper {
 		@include laptop {
 			justify-content: flex-start;
 		}
 	}
+
 	& .list-group {
 		width: 100%;
+
 		@include laptop {
 			max-width: 60%;
 		}

@@ -21,7 +21,7 @@ const elementStrings = {
 	navLinkActive: 'nav__link--active',
 	modalOpen: 'modal--open',
 	modalShow: 'modal--show',
-	cookieBtn: 'cookie__btn'
+	cookieBtn: 'cookie__btn',
 
 };
 

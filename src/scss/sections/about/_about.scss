@@ -2,13 +2,15 @@ $primary__about: $color__fourth;
 $secondary__about: $color__secondary;
 
 .about {
-    background: $primary__about;
-    color: $secondary__about;
-    fill: $secondary__about;
-    border-color: $secondary__about;
-    text-align: center;
+	background: $primary__about;
+	color: $secondary__about;
+	fill: $secondary__about;
+	border-color: $secondary__about;
+	text-align: center;
+
 	.card {
 		width: 100%; // For IE
+
 		@include tablet {
 			max-width: 18.27em;
 		}

@@ -1,54 +1,51 @@
 .headline {
 	margin-bottom: 15vh;
 	z-index: 2;
-	
-    color: $text__bright;
-	
+	color: $text__bright;
 	font-family: $font__secondary;
 	line-height: 1;
 	text-align: center;
 	will-change: opacity;
-	
+
 	@include laptop {
 		margin-bottom: 20vh;
 	}
 }
 
 .headline__primary {
-    margin-bottom: .9em;
+	margin-bottom: 0.9em;
+	font-weight: 100;
+	text-shadow: 0.05em 0.05rem #333;
 
-    font-weight: 100;
-    text-shadow: .05em .05rem #333;
+	@include tablet {
+		margin-bottom: 0.9em;
+		font-size: 5em;
+	}
 
-    @include tablet {
-        margin-bottom: .9em;
-        font-size: 5em;
-    }
+	@include laptop {
+		margin-bottom: 1em;
+		font-size: 5em;
+	}
 
-    @include laptop {
-        margin-bottom: 1em;
-        font-size: 5em;
-    }
-
-    @include desktop {
-        margin-bottom: .5em;
-        font-size: 4em;
-    }
+	@include desktop {
+		margin-bottom: 0.5em;
+		font-size: 4em;
+	}
 }
 
 .headline__secondary {
-    font-weight: 100;
-    text-shadow: .125rem .0625rem #333;
+	font-weight: 100;
+	text-shadow: 0.125rem 0.0625rem #333;
 
-    @include tablet {
-        font-size: 3em;
-    }
+	@include tablet {
+		font-size: 3em;
+	}
 
-    @include laptop {
-        font-size: 3.5em;
-    }
+	@include laptop {
+		font-size: 3.5em;
+	}
 
-    @include desktop {
-        font-size: 3em;
-    }
+	@include desktop {
+		font-size: 3em;
+	}
 }

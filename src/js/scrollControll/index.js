@@ -19,7 +19,7 @@ export default (function() {
 			data.elements.heroBtnFadeStartPosition = Math.floor(data.elements.heroBtnDistanceTop / 2);
 
 			data.navbarState = {
-				actual: navbarColorCheckpoint(startPos)
+				actual: navbarColorCheckpoint(startPos),
 			};
 			data.navbarState.previous = data.navbarState.actual;
 
@@ -46,6 +46,6 @@ export default (function() {
 				// 6. Fading Call to Action
 				elements.heroBtn.style.opacity = opacityPrint(actualPosition, data.elements.heroBtnDistanceTop, data.elements.heroBtnFadeStartPosition);
 			}
-		}
+		},
 	};
 }());

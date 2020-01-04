@@ -1,6 +1,6 @@
 .card {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	margin-bottom: 3em;
 }
 
@@ -8,27 +8,26 @@
 	width: 4em;
 	height: 4em;
 	margin: 0 auto;
-    margin-bottom: 2em;
+	margin-bottom: 2em;
 }
 
 .card__title {
 	margin: 0 1.5rem 1.5em;
-    
-    font-size: 1.25em;
-    line-height: 1.25;
+	font-size: 1.25em;
+	line-height: 1.25;
 
-    @include tablet {
-        font-size: 1.1em;
-        line-height: 1.25;
-    }
+	@include tablet {
+		font-size: 1.1em;
+		line-height: 1.25;
+	}
 
-    @include laptop {
-        font-size: 1.2em;
-        line-height: 1.25;
-    }
+	@include laptop {
+		font-size: 1.2em;
+		line-height: 1.25;
+	}
 }
 
 .card__text {
-    margin: 0 1.5rem 2em;
+	margin: 0 1.5rem 2em;
 	text-align: justify;
 }

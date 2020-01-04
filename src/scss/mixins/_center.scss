@@ -19,6 +19,5 @@
 	@if $horizontal > 0 {
 		left: $horizontal;
 	}
-
 	transform: translate(-$horizontal, -$vertical);
 }

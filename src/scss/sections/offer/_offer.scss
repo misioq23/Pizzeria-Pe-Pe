@@ -1,46 +1,51 @@
 $primary__offer: $color__third;
 $secondary__offer: $color__fourth;
+
 .offer {
-    background: $primary__offer;
-    color: $secondary__offer;
-    fill: $secondary__offer;
-    border-top: 0.1em solid $primary__offer;
-    border-bottom: 0.1em solid $primary__offer;
-    
-    z-index: 10;
-    text-align: center;
+	background: $primary__offer;
+	color: $secondary__offer;
+	fill: $secondary__offer;
+	border-top: 0.1em solid $primary__offer;
+	border-bottom: 0.1em solid $primary__offer;
+	z-index: 10;
+	text-align: center;
 
-    @include tablet {
-        text-align: left;
-    }
+	@include tablet {
+		text-align: left;
+	}
 
-    &::before,
-    &::after {
+	&::before,
+	&::after {
 		position: absolute;
-        left: 0;
+		left: 0;
 		width: 100vw;
-        height: 1.5em;
-        background: url(../img/rip.svg) bottom;
-        background-size: 120%;
+		height: 1.5em;
+		background: url(../assets/icons/rip.svg) bottom;
+		background-size: 120%;
 		content: '';
-        @include laptop {
-            height: 2em;
-        }
-        @include desktop {
-            height: 3.125em;
-        }
-	}
-	&::before {
-        bottom: 100%;
-        transform: rotate(180deg);
-    }
 
-    &::after {
-        top: 100%;
+		@include laptop {
+			height: 2em;
+		}
+
+		@include desktop {
+			height: 3.125em;
+		}
 	}
+
+	&::before {
+		bottom: 100%;
+		transform: rotate(180deg);
+	}
+
+	&::after {
+		top: 100%;
+	}
+
 	& .card {
 		width: 100%;
 		text-align: center;
+
 		@include tablet {
 			margin: 0;
 			max-width: 50%;

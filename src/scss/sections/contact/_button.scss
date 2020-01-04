@@ -10,28 +10,27 @@ $second: #fff;
 	fill: $second;
 
 	//making border outside the button
-    &::before {
-        $border__thick: -.1em;
-        content: '';
-        position: absolute;
-        top: $border__thick;
-        left: $border__thick;
-        right: $border__thick;
-        bottom: $border__thick;
+	&::before {
+		$border__thick: -0.1em;
+		content: '';
+		position: absolute;
+		top: $border__thick;
+		left: $border__thick;
+		right: $border__thick;
+		bottom: $border__thick;
 		border-radius: 2em;
-		border: .1em solid $first;
-    }
-	
+		border: 0.1em solid $first;
+	}
 }
 
 .chip__img {
 	width: 4em;
 	height: 4em;
-	margin-right: .5em;
-	padding: .8em;
+	margin-right: 0.5em;
+	padding: 0.8em;
 	background: $first;
-	border-radius: 50% ;
-	border: .3em solid $second;
+	border-radius: 50%;
+	border: 0.3em solid $second;
 }
 
 .chip__text {

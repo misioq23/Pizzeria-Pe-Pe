@@ -1,29 +1,34 @@
 $primary__contact: $color__fourth;
 $secondary__contact: $text__dark;
+
 .contact {
-    background: $primary__contact;
-    color: $secondary__contact;
-    fill: $secondary__contact;
-    padding-bottom:0;
-    z-index: 5;
-    
-    @include tablet {
-        padding-bottom: 8em;
+	background: $primary__contact;
+	color: $secondary__contact;
+	fill: $secondary__contact;
+	padding-bottom: 0;
+	z-index: 5;
+
+	@include tablet {
+		padding-bottom: 8em;
 	}
 
 	ul {
 		@include tablet {
 			max-width: 50%;
 		}
+
 		@include laptop {
 			max-width: 40%;
 		}
 	}
+
 	.map {
 		width: 100%;
+
 		@include tablet {
 			max-width: 45%;
 		}
+
 		@include laptop {
 			max-width: 60%;
 		}

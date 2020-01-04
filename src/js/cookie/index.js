@@ -1,4 +1,4 @@
-import { set, get } from '@firstandthird/cookie-monster';
+import Cookies from 'js-cookie';
 import { elements, elementStrings } from '../config';
 
 export default (function() {
@@ -13,16 +13,16 @@ export default (function() {
 
 	function _clickHandler(e) {
 		if (e.target.classList.contains(elementStrings.cookieBtn)) {
-			set('cookieinfo', 'true', 365);
+			Cookies.set('cookieinfo', 'true', 365);
 			elements.cookie.removeEventListener('click', _clickHandler);
 			elements.cookie.parentNode.removeChild(elements.cookie);
 		}
 	}
 
 	function createCookie() {
-		if (get('cookieinfo')) {
+		if (Cookies.get('cookieinfo'))
 			return false;
-		}
+
 		_cookieShow();
 		elements.cookie.addEventListener('click', _clickHandler);
 	}

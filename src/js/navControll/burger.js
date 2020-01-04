@@ -25,10 +25,10 @@ const burger = (function() {
 		},
 		// e.g. deactivate menu on resize event
 		deactivate() {
-			if (data.navOpen) {
+			if (data.navOpen)
 				burgerToggle();
-			}
-		}
+
+		},
 	};
 }());
 

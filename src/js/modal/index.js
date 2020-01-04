@@ -24,17 +24,17 @@ export default (function() {
 	}
 	function _keyPressClose(event) {
 		// escape button
-		if (event.keyCode === 27) {
+		if (event.keyCode === 27)
 			// eslint-disable-next-line no-use-before-define
 			close();
-		}
+
 	}
 	function _clickOutside(event) {
 		const targetSection = event.target.closest('.modal__dialog');
-		if (!targetSection) {
+		if (!targetSection)
 			// eslint-disable-next-line no-use-before-define
 			close();
-		}
+
 	}
 	function _modalFocusTrap() {
 		const navbarFocus = focusTrap.findElements(elements.navbar);
@@ -53,9 +53,9 @@ export default (function() {
 	}
 
 	function open() {
-		if (!data.menuScript) {
+		if (!data.menuScript)
 			_downloadMenu();
-		}
+
 		_modalToggle();
 		// save & disable clicked button which opens modal
 		_disableBtn();
@@ -86,6 +86,6 @@ export default (function() {
 
 	return {
 		open,
-		close
+		close,
 	};
 }());
