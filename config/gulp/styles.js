@@ -1,22 +1,26 @@
-import autoprefixer from 'gulp-autoprefixer';
-import gulp from 'gulp';
+import { src, dest } from 'gulp';
 import sass from 'gulp-sass';
+import autoprefixer from 'gulp-autoprefixer';
 import sourcemaps from 'gulp-sourcemaps';
-
+import cleanCSS from 'gulp-clean-css';
 import config from '../config';
 
-// SCSS task
-const scss = () => {
-	return gulp
-		.src(config.src.scss)
+const cssBuild = () =>
+	src(config.src.scss)
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
-		.pipe(autoprefixer({
-			browsers: config.browsersList,
-			cascade: false
-		}))
+		.pipe(
+			autoprefixer({
+				cascade: false,
+				grid: 'no-autoplace',
+			}),
+		)
 		.pipe(sourcemaps.write())
-		.pipe(gulp.dest(config.build.css));
-};
+		.pipe(dest(config.build.css));
 
-export default scss;
+const cssDist = () =>
+	src(`${config.build.css}*.css`)
+		.pipe(cleanCSS())
+		.pipe(dest(config.dist.css));
+
+export { cssBuild, cssDist };

@@ -1,13 +1,22 @@
+import { src, dest } from 'gulp';
 import { rollup } from 'rollup';
+import terser from 'gulp-terser';
+import configRollup from '../rollup/rollup.config';
+import config from '../config';
 
-import configRollup from '../rollup/default';
+const input = {
+	input: configRollup.input,
+	plugins: configRollup.plugins,
+};
 
-const jsBundle = async () => {
-	const bundle = await rollup({
-		input: configRollup.input,
-		plugins: configRollup.plugins
-	});
+const rollupBundle = async () => {
+	const bundle = await rollup(input);
 	return bundle.write(configRollup.output);
 };
 
-export default jsBundle;
+const jsDist = () =>
+	src(config.rollup.output)
+		.pipe(terser())
+		.pipe(dest(config.dist.js));
+
+export { rollupBundle, jsDist };

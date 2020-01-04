@@ -1,38 +1,38 @@
-/* gulp-config.js */
-export default {
-
-	serv: {
+const config = {
+	server: {
 		server: {
-			baseDir: 'build/'
+			baseDir: 'build/',
 		},
-		port: 3000
-	},
-
-	json: {
-		dir: 'config/server/db.json'
+		port: 3000,
 	},
 
 	src: {
-		html: 'src/markup/*.html',
+		html: 'src/*.html',
 		scss: 'src/scss/**/**/*.scss',
-		js: 'src/scripts/**/*.js',
-		tests: 'test/**/*.js',
-		img: 'src/img/*.{jpg,svg,png}',
+		js: 'src/js/**/*.js',
+		assets: 'src/assets/**/*.{jpg,svg,png,ico}',
+		test: 'test/**/*.js',
 	},
 
 	build: {
 		html: 'build/',
 		css: 'build/css/',
-		js: 'build/js/bundle.js',
-		img: 'build/img/',
-		name: 'pepe',
-		bundleFormat: 'iife'
+		js: 'build/js/',
+		assets: 'build/assets/',
 	},
 
-	browsersList: [
-		'last 1 version',
-		// 'chrome > 70',
-		// '> 0.001% in PL',
-		// 'ie > 8',
-	]
+	dist: {
+		html: 'dist/',
+		css: 'dist/css/',
+		js: 'dist/js/',
+		assets: 'dist/assets/',
+	},
+
+	rollup: {
+		input: 'src/js/index.js',
+		output: 'build/js/bundle.js',
+		bundleFormat: 'iife',
+	},
 };
+
+export default config;
