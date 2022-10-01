@@ -1,9 +1,12 @@
 import { src, dest } from 'gulp';
-import sass from 'gulp-sass';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
 import sourcemaps from 'gulp-sourcemaps';
 import cleanCSS from 'gulp-clean-css';
 import config from '../config';
+
+const sass = gulpSass(dartSass);
 
 const cssBuild = () =>
 	src(config.src.scss)
